@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Seller - SmartCultivo Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Header&Footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2d5016;
+      margin-bottom: 25px;
+    }
+
+    .seller-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .seller-card {
+      background-color: #ffffff;
+      border-left: 6px solid #2d6a4f;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .seller-card p {
+      margin: 6px 0;
+      color: #333;
+    }
+
+    .form-section {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, textarea, select {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #f8fff4;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .submit-btn {
+      background-color: #2d6a4f;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #22543d;
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+    }
+
+    *{
+  margin: 0px;
+  padding: 0px;
+  font-family: Poppins;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+            <div class="header">
+               <a href="Home.html"><img src="./Logo_Agri_Assist.png"  width="160px"></a>
+                <nav class="navigation">
+                        <a href="Home.html" class="tags"><b>Home</b></a>
+                        <div class="drop" ><a class="tags"><b>Categories</b></a>
+                            <div class="dropdown">
+                          <a href="agri-page.html">Agriculture</a>
+                           <a href="Aquaculture.html">Aquaculture</a>
+                           <a href="seri_page.html">Sericulture</a>
+                           <a href="Apiculture.html">Apiculture</a>
+                           <a href="PoultryMain.html">Poultry</a>
+                           <a href="Dairy-page.html">Dairy</a>
+                            </div>
+                            </div>
+                        <a href="Weather1.html" class="tags"><b>Weather</b></a>
+                        <a href="MarketPlace_AGRI.html" class="tags"><b>Market</b></a>
+                        <a href="About-us.html" class="tags"><b>About</b></a>
+                        <a href="iship_contact_us.html" class="tags"><b>Contact Us</b></a>
+                        <a href="project-login.html" class="profile"><b>Login</b></a>
+                </nav>
+                <div onclick="Open()" style="padding-top: 45px;" class="bars"><i class="fa-solid fa-bars"></i></div>
+                <div class="menu_options">
+                <span onclick="Close()">&times;</span>
+                <div><a href="Home.html"><b>Home</b></a></div>
+                         <div class="drop1"><a href="#"><b>Categories</b></a>
+                            <div class="dropdown1">
+                             <a href="agri-page.html">Agriculture</a>
+                           <a href="Aquaculture.html">Aquaculture</a>
+                           <a href="seri_page.html">Sericulture</a>
+                           <a href="Apiculture.html">Apiculture</a>
+                           <a href="PoultryMain.html">Poultry</a>
+                           <a href="Dairy-page.html">Dairy</a>
+                            </div>
+                        </div>
+                        <div><a href="Weather1.html"><b>Weather</b></a></div>
+                        <div><a href="MarketPlace_AGRI.html"><b>Market</b></a></div>
+                        <div><a href="About-us.html"><b>About</b></a></div>
+                        <div><a href="iship_contact_us.html"><b>Contact Us</b></a></div>
+                        <div><a href="project-login.html"><b>Login</b></a></div>
+              </div>
+             <script>
+            function Close(){
+                document.getElementsByClassName("menu_options")[0].style.left="-320px";
+            }
+             function Open(){
+                document.getElementsByClassName("menu_options")[0].style="left:0px";
+            }
+            </script>
+            </div>
+        </header>
+
+    
+  <div class="container">
+    <h1>🛒 Marketplace - Contact a Seller</h1>
+
+    
+    <div class="seller-grid">
+      <div class="seller-card">
+        <p><strong>Culture: &nbsp;</strong> Agriculture</p>
+        <p><strong>Seller:&nbsp;</strong> Lakshmi Agro Traders</p>
+        <p><strong>Location:&nbsp;</strong> Guntur</p>
+        <p><strong>Product:&nbsp;</strong> Rice - ₹54/kg</p>
+        <p><strong>Contact:&nbsp;</strong> +91 98450 12345</p>
+      </div>
+
+      <div class="seller-card">
+        <p><strong>Culture:&nbsp;</strong> Aquaculture</p>
+        <p><strong>Seller:&nbsp;</strong> Raju Agro Traders</p>
+        <p><strong>Location:&nbsp;</strong> Anantapur</p>
+        <p><strong>Product:&nbsp;</strong> Prawns - ₹78</p>
+        <p><strong>Contact:&nbsp;</strong> +91 98765 43210</p>
+      </div>
+
+      <div class="seller-card">
+        <p><strong>Culture:&nbsp;</strong> Apiculture</p>
+        <p><strong>Seller:&nbsp;</strong> CottonKart Pvt Ltd</p>
+        <p><strong>Location:&nbsp;</strong> Karimnagar</p>
+        <p><strong>Product:&nbsp;</strong> Honey - ₹120/kg</p>
+        <p><strong>Contact:&nbsp;</strong> +91 99887 65432</p>
+      </div>
+
+      <div class="seller-card">
+        <p><strong>Culture:&nbsp;</strong> Sericulture</p>
+        <p><strong>Seller:&nbsp;</strong> GoldenSpice Agro</p>
+        <p><strong>Location:&nbsp;</strong> Nizamabad</p>
+        <p><strong>Product:&nbsp;</strong> Cotton - ₹98</p>
+        <p><strong>Contact:&nbsp;</strong> +91 90909 12345</p>
+      </div>
+
+      <div class="seller-card">
+        <p><strong>Culture:&nbsp;</strong> Poultry culture</p>
+        <p><strong>Seller:&nbsp;</strong> GoldenSpice Agro</p>
+        <p><strong>Location:&nbsp;</strong> Vijayawada</p>
+        <p><strong>Product:&nbsp;</strong> Eggs - ₹98</p>
+        <p><strong>Contact:&nbsp;</strong> +91 90909 12345</p>
+      </div>
+
+      <div class="seller-card">
+        <p><strong>Culture:&nbsp;</strong> Dairy culture</p>
+        <p><strong>Seller:&nbsp;</strong> GoldenSpice Agro</p>
+        <p><strong>Location:&nbsp;</strong> Annavaram</p>
+        <p><strong>Product:&nbsp;</strong> Milk - ₹98/L</p>
+        <p><strong>Contact:&nbsp;</strong> +91 90909 12345</p>
+      </div>
+    </div>
+
+    
+    <div class="form-section">
+      <form>
+        <h3 style="color:#2d6a4f; margin-bottom: 15px;">📩 Send Inquiry to a Seller</h3>
+
+        <label for="buyer-name">Your Name</label>
+        <input type="text" id="buyer-name" name="buyer-name" placeholder="Enter your name" required>
+
+        <label for="buyer-phone">Phone Number</label>
+        <input type="tel" id="buyer-phone" name="buyer-phone" placeholder="Enter your mobile number" required>
+
+        <label for="buyer-email">Email</label>
+        <input type="email" id="buyer-email" name="buyer-email" placeholder="Enter your email" required>
+
+        <label for="culture">Select Culture</label>
+        <select id="culture" name="culture" required>
+          <option value="">-- Choose a Culture --</option>
+          <option>Agriculture</option>
+          <option>Aquaculture</option>
+          <option>Apiculture</option>
+          <option>Sericulture</option>
+          <option>Poultryculture</option>
+          <option>Dairyculture</option>
+        </select>
+
+        <label for="product">Select Product</label>
+        <select id="product" name="product" required>
+          <option value="">-- Choose a Product --</option>
+          <option>Rice</option>
+          <option>Prawns</option>
+          <option>Honey</option>
+          <option>Cotton</option>
+          <option>Eggs</option>
+          <option>Milk</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message for the seller..." required></textarea>
+
+        <button type="submit" class="submit-btn">📨 Send Message</button>
+      </form>
+    </div>
+  </div>
+
+    <footer>
+            <div class="footer">
+                <div class="foot">
+                    <div class="links">
+                        <div class="com">
+                            <div style=" color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif; "><b>Quick Links</b></div>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Home</a>
+                            <a href="Weather1.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Weather</a>
+                            <a href="MarketPlace_AGRI.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Market</a>
+                            <a href="About-us.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">About</a>
+                        </div>
+                        <div class="com">
+                            <div style=" color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif; "><b>Resources</b></div>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">FAQ's</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Blogs</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Guidelines</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Terms & Conditions</a>
+                        </div>
+                        <div class="com11">
+                            <div style="color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif"><b>Contact</b></div>
+                             <div style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; cursor: pointer;">📞 Call: +91 8096542356</div>
+                              <div style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; cursor: pointer;">📧 Email: support@agriassist.com</div>
+                        </div>
+                        <div class="com">
+                            <div style="color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif"><b>Follow Us</b></div>
+                            <div class="com1">
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-facebook"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-youtube"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo"><img src="Logo_Agri_Assist.png" width="250px" height="200px"></div>
+                </div>
+                 <hr/>
+                <div class="copy">&copy; 2025 AgriAssist. All rights reserved.</div>
+            </div>
+        </footer>
+</body>
+</html>

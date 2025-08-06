@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart MILK Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdf7e3;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2rem;
+      animation: myani 1s ease;
+    }
+
+    .hero img {
+        height: 350px;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #8d6e63;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      margin-bottom: 1rem;
+      font-size: 20px;
+    }
+
+    .hero button {
+      background-color: #8d6e63;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.8s;
+    }
+
+    .hero button:hover {
+      background-color: #8d6e63b9;
+    }
+
+    @keyframes myani{
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .content-box {
+        border: 3px solid #8d6e63;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+      animation: ani 1.2s ease-out;
+    }
+
+     @keyframes ani {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .content-box1 {
+      width: 900px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+      animation: ani 1.2s ease-out;
+      margin: 2rem auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      animation: anima 1.5s ease;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #8d6e63;
+      color: white;
+      font-weight: 600;
+    }
+
+    @keyframes anima {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .soil-classification{
+        border: 3px solid #8d6e63;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+    }
+
+
+    .upload-panel{
+        border: 3px solid #8d6e63;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+    }
+
+    .upload-panel input {
+      margin-top: 0.5rem;
+    }
+
+    .upload-panel button {
+      margin-top: 1rem;
+      background-color: #8d6e63;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 8px solid;
+    }
+
+    .texture, .chemical, .nutrients { 
+      border-color: #8d6e63; 
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+     .item {
+      margin: 5px 0;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+    .low { color: #e53935; }
+    .optimal { color: #43a047; }
+    .high { color: #fb8c00; }
+    .neutral { color: #1e88e5; }
+    
+
+    .section {
+      animation: fadeInUp 2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section:hover {
+          transform: scale(1.02);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      }
+
+
+
+
+        .crop-suggestion-grid {
+            text-align: center;
+            padding: 2rem;
+            background-color: #ecd1c867;
+            border-top: 2px solid #8d6e63;
+        }
+
+        .crop-suggestion-grid h2 {
+          font-size: 1.8rem;
+          color: #8d6e63;
+        }
+
+        .crop-subtitle {
+          color: #555;
+          margin-top: 0.5rem;
+          font-size: 0.95rem;
+        }
+
+        .grid-suggestions {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 1.2rem;
+          margin-top: 2rem;
+          max-width: 950px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .crop-card {
+          background: linear-gradient(145deg, #ffffff, #f2c0b1);
+          padding: 1rem;
+          border-radius: 14px;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+          font-size: 1rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .crop-card p {
+          margin-top: 0.4rem;
+          font-size: 0.85rem;
+          color: #444;
+        }
+
+        .crop-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+        }
+
+
+        .weather-tips {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #ecd1c867;
+            padding: 2rem 1rem;
+            border-top: 1px solid #cfd8dc;
+            margin-top: 50px;
+        }
+
+
+      .salinity-ec{
+        border: 3px solid #8d6e63;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+    .salinity-ec p{
+        margin-top: 10px;
+    }
+
+    .fertilizer-recommend{
+        border: 3px solid #8d6e63;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+
+    .soil-health-index{
+        border: 3px solid #8d6e63;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+
+    .tips:hover, .salinity-ec:hover, .fertilizer-recommend:hover, .soil-health-index:hover{
+        box-shadow: 0px 0px 15px 5px #e6c6bb;
+        transform: scale(1.03);
+    } 
+
+
+     .tips {
+        border: 3px solid #8d6e63;
+      background: #fefefe;
+      padding: 2rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: myani 2s ease;
+      transition: transform 0.5s;
+    }
+
+     .soil-cards {
+      background: #ecd1c867;
+      padding: 60px 20px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 50px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #8d6e63;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px 20px;
+      width: 350px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.8s ease, box-shadow 0.3s ease;
+      animation: tata 1s ease-in-out;
+    }
+
+    .card h3 {
+      color: #8d6e63;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+
+   @keyframes tata {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .video-section iframe {
+      width: 100%;
+      height: 320px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border: none;
+      animation: animation1 1s ease;
+    }
+
+     @keyframes animation1 {
+      from { 
+        opacity: 0; 
+      }
+      to { 
+        opacity: 1; 
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #8d6e63;
+    }
+
+   
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero img {
+        margin-top: 4rem;
+        max-width: 350px;
+      }
+      .weather-tips {
+        flex-direction: column;
+        text-align: center;
+      }
+      .video-section iframe { 
+        height: 200px; 
+      }
+      .irrigation{
+        margin-top: 50px;
+      }
+      
+    }
+
+    
+    @media (min-width: 768px){
+      .hero img {
+        margin-top: 4rem;
+        max-width: 450px;
+      }
+      .content-box1{
+        width: 700px;
+      }
+      .irrigation{
+        margin-top: 50px;
+      }
+       .video-section iframe { 
+        height: 300px; 
+      }
+    }
+     @media (min-width: 1024px){
+      .irrigation{
+        margin-top: 0px;
+      }
+    }
+
+
+   @media (max-width: 425px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem !important;
+  }
+
+  .hero img {
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .content-box, .content-box1,
+  .soil-classification, .upload-panel,
+  .salinity-ec, .fertilizer-recommend,
+  .tips, .soil-health-index {
+    width: 95% !important;
+    margin: 1rem auto;
+    padding: 1.2rem;
+  }
+
+  .hehe, .hehe1, 
+  .salinity-ec, .fertilizer-recommend,
+  .tips, .soil-health-index {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  table th, table td {
+    padding: 0.3rem;
+    font-size: 0.75rem;
+  }
+
+  .grid-suggestions {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .crop-card {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .crop-card p {
+    font-size: 0.75rem;
+  }
+
+  .weather-tips {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .video-section iframe {
+    height: 200px !important;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+}
+
+
+.hehe .content-box{
+  transition: transform 0.5s ease;
+}
+.hehe .content-box:hover{
+  box-shadow: 0 20px 15px #8d6e63b9;
+  transform: translateY(-10px);
+}
+
+tr:hover{
+  box-shadow: 0px 0px 5px 2px #8d6e63;
+}
+
+  </style>
+</head>
+<body>
+
+
+    <section class="hero">
+        <div class="hero-text">
+        <h2 style="font-size: 50px;">AI-Based Dairy Health & Milk Yield Tracker</h2>
+        <p style="font-size: 18px;">Upload cattle images or input data to get real-time insights on health conditions, milk productivity, and feeding recommendations powered by AI.</p>
+        <button onclick="scrolltosection()">Get Started</button>
+        </div>
+        <img src="https://www.zagro.com/storage/articles/dairy-cattle-nutrition.jpg" alt="Soil Analysis">
+    </section>
+
+
+<section class="hehe" style="display: flex; gap:50px; justify-content:space-evenly; flex-wrap:wrap;">
+    <section class="content-box" style="width: 600px; line-height: 28px;">
+        <h2 style="line-height: 35px;">🥛 Why Cattle Health & Milk Yield Monitoring Matters</h2>
+        <p style="margin-top: 20px;">
+            Cattle health directly influences milk yield, farm profitability, and product quality. By continuously tracking vital health indicators like temperature, feed intake, and activity levels, dairy farmers can detect early signs of illness, optimize feeding schedules, and enhance overall productivity. This ensures animal welfare, reduces losses, and supports sustainable dairy practices.
+        </p>
+    </section>
+
+    <section class="content-box" style="width: 600px;">
+          <h2>📈 Benefits of AI-Based Dairy Monitoring</h2>
+            <ul type="square" style="text-align: left; margin: auto; margin-top: 20px; line-height: 30px; padding-left: 6rem;">
+                <li>Improves overall milk yield and quality</li>
+                <li>Enables early detection of cattle health issues</li>
+                <li>Optimizes feeding, breeding, and milking schedules</li>
+                <li>Reduces veterinary costs through preventive care</li>
+                <li>Ensures better animal welfare and farm efficiency</li>
+            </ul>
+    </section>
+</section> 
+
+    <section class="content-box1">
+          <h2>🧾 Cattle Breeds & Their Characteristics</h2>
+            <table>
+            <thead>
+                <tr>
+                <th>Breed</th>
+                <th>Milk Yield</th>
+                <th>Climate Suitability</th>
+                <th>Health Sensitivity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Holstein Friesian</td>
+                <td>High (25-30 L/day)</td>
+                <td>Temperate</td>
+                <td>Moderate - Needs clean, cool conditions</td>
+                </tr>
+                <tr>
+                <td>Jersey</td>
+                <td>Medium (15-20 L/day)</td>
+                <td>Hot & Humid</td>
+                <td>High - Susceptible to heat stress</td>
+                </tr>
+                <tr>
+                <td>Gir</td>
+                <td>Moderate (12-15 L/day)</td>
+                <td>Tropical & Semi-arid</td>
+                <td>Low - Disease-resistant</td>
+                </tr>
+                <tr>
+                <td>Sahiwal</td>
+                <td>Moderate (10-15 L/day)</td>
+                <td>Hot & Dry</td>
+                <td>Low - High heat tolerance</td>
+                </tr>
+            </tbody>
+            </table>
+
+</section>
+
+
+<section id="targetSec" class="hehe1" style="display: flex; flex-wrap: wrap;">
+    <section class="soil-classification" style="width: 500px;">
+    <h2>🧭 Cattle Breed Selection</h2>
+    <p style="margin-top: 10px;">Select cattle breed for analysis:</p>
+    <select style="margin-top: 10px; padding: 0.5rem; border-radius: 6px; border: 1px solid #ccc;">
+        <option>Holstein Friesian</option>
+        <option>Jersey</option>
+        <option>Gir</option>
+        <option>Sahiwal</option>
+        <option>Red Sindhi</option>
+    </select>
+    </section>
+
+    <section class="upload-panel" style="width: 500px;">
+        <h2>📤 Upload Cattle Image or Health Report</h2>
+        <p style="margin-top: 10px; font-size: 15px;">Upload an image of the cow or a health report (JPG, PNG, PDF):</p>
+        <input type="file" accept="image/*,.pdf" style="margin-top: 10px;">
+        <br>
+        <button onclick="analyzeImage()">Analyze</button>
+    </section>
+</section>
+
+
+        <h1 style="margin-bottom: 10px;">🐄 Cattle Health & Milk Yield Report</h1>
+
+        <section style="display: flex; gap: 20px; justify-content:space-evenly; flex-wrap: wrap;">
+        <div class="section texture">
+            <h2>🩺 Physical Health Metrics</h2>
+            <div class="item">Body Condition Score (BCS): <strong>3.5 / 5</strong> - <span class="optimal">Healthy</span></div>
+            <div class="item">Temperature: <strong>38.6°C</strong></div>
+            <div class="item">Heart Rate: <strong>72 bpm</strong></div>
+            <div class="item">Respiratory Rate: <strong>30 breaths/min</strong></div>
+        </div>
+
+        <div class="section chemical" style="width: 350px;">
+            <h2>🥛 Milk Production</h2>
+            <div class="item">Daily Yield: <strong>18.2 liters</strong></div>
+            <div class="item">Fat Content: <strong>3.8%</strong></div>
+            <div class="item">Protein Content: <strong>3.2%</strong></div>
+            <div class="item">Lactation Stage: <strong>Mid</strong></div>
+        </div>
+
+        <div class="section nutrients">
+            <h2>🌾 Feed & Nutrition Status</h2>
+            <div class="item">Dry Matter Intake (DMI): <strong>15.4 kg/day</strong></div>
+            <div class="item">Balanced Ration: <span class="optimal">Yes</span></div>
+            <div class="item">Water Intake: <strong>50 L/day</strong></div>
+        </div>
+        </section>
+
+
+
+
+    <section class="crop-suggestion-grid">
+    <h2>🐮 Recommended Feed & Supplements</h2>
+    <p class="feed-subtitle">Based on cattle age, health, and milk yield</p>
+    <div class="grid-suggestions">
+    <div class="crop-card">
+        🌾 <strong>Silage</strong>
+        <p>High-energy forage ideal for lactating cows.</p>
+    </div>
+    <div class="crop-card">
+        🫘 <strong>Protein Concentrates</strong>
+        <p>Essential for improving milk protein and overall yield.</p>
+    </div>
+    <div class="crop-card">
+        🧂 <strong>Mineral Mix</strong>
+        <p>Prevents deficiencies and boosts immunity.</p>
+    </div>
+    <div class="crop-card">
+        💧 <strong>Electrolytes</strong>
+        <p>Helpful during heat stress and dehydration periods.</p>
+    </div>
+    </div>
+</section>
+
+
+    <section class="weather-tips">
+        <div class="weather">
+        <h2>🌤️ Current Weather</h2>
+        <p style="margin-top: 10px;">Peddapuram, 32°C, Humidity: 70%, Wind: 9 km/h</p>
+        </div>
+        <div class="irrigation">
+        <h2>🐄 Cattle Comfort Tip</h2>
+        <p style="margin-top: 10px; line-height: 28px;">
+        High humidity & temperature may cause heat stress.<br>
+        Ensure shaded shelter and proper hydration today.
+        </p>
+        </div>
+    </section>
+
+
+<section style="display: flex; flex-wrap:wrap;">
+    <section class="salinity-ec" style="width: 600px; margin-top: 50px; margin-bottom: 70px;">
+    <h2>💧 Drinking Water Quality</h2>
+    <p>Total Dissolved Solids (TDS): <strong>600 mg/L</strong> – <span style="color: green;">Safe</span></p>
+    <p>Nitrate Level: <strong>25 ppm</strong> – <span style="color: green;">Acceptable</span> for cattle health</p>
+    </section>
+
+    <section class="fertilizer-recommend" style="width: 600px;">
+    <h2>🥗 Nutrition Suggestions</h2>
+    <p style="margin-top: 10px;">Based on current health and yield status:</p>
+    <ul type="square" style="text-align: left; max-width: 600px; margin: auto; line-height: 35px; margin-top: 15px; padding-left: 2rem; font-size: 15px;">
+        <li><strong>Low Milk Yield</strong>: Add energy-rich feed like maize or cottonseed cake</li>
+        <li><strong>Weak Immunity</strong>: Supplement with minerals (calcium, phosphorus)</li>
+        <li><strong>Poor Digestion</strong>: Provide probiotics or green fodder</li>
+    </ul>
+    </section>
+</section>
+
+
+<section style="display: flex; flex-wrap:wrap;">
+    <section class="tips" style="width: 600px;">
+        <h2>🐄 Cattle Health Tips</h2> 
+        <ul type="square" style="text-align: left; padding-left: 2rem; line-height: 32px; margin-top: 15px;">
+        <li>Ensure access to clean drinking water at all times.</li>
+        <li>Schedule regular veterinary checkups and vaccinations.</li>
+        <li>Provide a balanced diet with sufficient minerals and proteins.</li>
+        <li>Maintain hygienic shelter to prevent infections and mastitis.</li>
+        </ul>
+    </section>
+
+    <section class="soil-health-index" style="width: 600px;">
+    <h2>📊 Cattle Health Index</h2>
+    <div style="margin: auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: #8d6e63; margin-top: 10px;">
+        82 / 100
+    </div>
+    <p style="color: blue; font-weight: bold; margin-top: 10px;">Excellent</p>
+    </section>
+</section>
+
+    <section class="soil-cards">
+        <h2 class="section-title">🐄 Dairy Health Monitoring Highlights</h2>
+        <div class="card-container">
+
+            <div class="card">
+                <h3>❓ Why Monitor Dairy Health?</h3>
+                <p>Healthy cattle lead to higher milk production, lower vet costs, and better reproductive efficiency.</p>
+            </div>
+
+            <div class="card">
+                <h3>📋 What Do We Track?</h3>
+                <p>Track milk yield, body temperature, feed intake, weight, lactation stage, and disease symptoms using sensors or logs.</p>
+            </div>
+
+            <div class="card">
+                <h3>🧑‍⚕️ What Can You Do?</h3>
+                <p>Provide balanced nutrition, routine vaccinations, proper housing, and regular health checks to optimize dairy performance.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content-box1 video-section" style="margin-top: 50px;">
+        <h2 style="color: #8d6e63;">📹 Watch: How to Improve Cattle Health & Milk Yield for Dairy Culture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/X_U82ejzJvw?si=GdKyxyKZAVIozXlF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+
+
+<!-- script -->
+ <script>
+  function analyzeImage() {
+    alert("🔍 Analyzing your catle breed sample image... Please wait!");
+  }
+
+  function scrolltosection()
+    {
+        const section = document.getElementById("targetSec");
+        section.scrollIntoView({ behavior: "smooth" });
+    }
+</script>    
+
+
+</body>
+</html>

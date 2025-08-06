@@ -1,0 +1,1143 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(240, 248, 255, 0.396);
+}
+
+/* HEADER PART */
+.logo{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    position: relative;
+}
+.logo-home{
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 15px;
+    left: 50px;
+}
+.nav_bar{
+    position: absolute;
+    top: 50px;
+    left: 300px;
+}
+a{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 2rem;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+a:hover{
+    color: green;
+}
+.login{
+    position: absolute;
+    top: 35px;
+    left: 1200px;
+}
+.b{
+    width: 100px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 13px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+}
+.b:active{
+    background-color: rgb(4, 91, 4);
+}
+
+/* IMAGE PART */
+section{
+    height: 600px;
+    background-color: rgba(179, 168, 168, 0.177);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.image1{
+    position: relative;
+    top: 50px;
+}
+
+/* since part */
+.box{
+    width: 310px;
+    height: 130px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 470px;
+    right: 430px;
+}
+.text1{
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
+.log{
+    width: 180px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.text2{
+    position: absolute;
+    top: 45px;
+    right: 75px;
+    color: rgb(234, 57, 86);
+    text-align: center;
+}
+.text3{
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    text-align: center;
+}
+/* GREEN PART */
+.green{
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(to right, green, rgba(42, 152, 42, 0.796));
+    position: relative;
+    justify-content: space-evenly;
+}
+i{
+    font-size: 30px;
+    position: absolute;
+    left: -50px;
+    top: 7px;
+}
+.gre1{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 40px;
+    left: 290px;
+}
+.gre2{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 40px;
+    left: 550px;
+}
+.gre3{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 40px;
+    left: 800px;
+}
+.gre4{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 40px;
+    left: 1100px;
+}
+
+/* top categories */
+.top{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 90px;
+}
+
+/* boxes */
+.boxes{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 40px;
+    position: relative;
+}
+.box1{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(173, 216, 230, 0.522);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box1:hover{
+    color: white;
+    background-color: rgba(6, 136, 179, 0.912);
+}
+.box2{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(255, 192, 203, 0.452);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box2:hover{
+    color: white;
+    background-color: rgb(235, 92, 115);
+}
+.box3{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(32, 178, 171, 0.344);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box3:hover{
+    color: white;
+    background-color: rgb(32, 178, 171);
+}
+.box4{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(255, 187, 0, 0.275);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box4:hover{
+    color: white;
+    background-color: rgba(181, 141, 32, 0.964);
+}
+.box5{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(0, 0, 255, 0.253);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box5:hover{
+    color: white;
+    background-color: rgba(0, 0, 255, 0.756);
+}
+.box6{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(216, 112, 147, 0.418);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box6:hover{
+    color: white;
+    background-color: palevioletred;
+}
+.box7{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(128, 0, 128, 0.308);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box7:hover{
+    color: white;
+    background-color: rgba(128, 0, 128, 0.826);
+}
+.box8{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(128, 128, 0, 0.274);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box8:hover{
+    color: white;
+    background-color: rgba(128, 128, 0, 0.886);
+}
+.box9{
+    width: 250px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgba(221, 160, 221, 0.266);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.box9:hover{
+    color: white;
+    background-color: rgb(204, 133, 204);
+}
+
+.box1 i{
+    position: relative; top: 6px; left: -10px; font-size: 35px; color: rgba(6, 136, 179, 0.912);
+}
+.box1:hover i{
+    color: white;
+}
+.box2 i{
+    position: relative; top: 6px; left: -20px; font-size: 35px; color: rgb(235, 92, 115);
+}
+.box2:hover i{
+    color: white;
+}
+.box3 i{
+    position: relative; top: 6px; left: -15px; font-size: 35px; color: rgb(32, 178, 171);
+}
+.box3:hover i{
+    color: white;
+}
+.box4 i{
+    position: relative; top: 6px; left: -15px; font-size: 35px; color: rgba(181, 141, 32, 0.964);
+}
+.box4:hover i{
+    color: white;
+}
+.box5 i{
+    position: relative; top: 6px; left: -15px; font-size: 35px; color: rgba(0, 0, 255, 0.756);
+}
+.box5:hover i{
+    color: white;
+}
+.box6 i{
+    position: relative; top: 6px; left: -20px; font-size: 35px; color: palevioletred;
+}
+.box6:hover i{
+    color: white;
+}
+.box7 i{
+    position: relative; top: 6px; left: -15px; font-size: 35px; color: rgba(128, 0, 128, 0.826);
+}
+.box7:hover i{
+    color: white;
+}
+.box8 i{
+    position: relative; top: 6px; left: -15px; font-size: 35px; color: rgba(128, 128, 0, 0.886);
+}
+.box8:hover i{
+    color: white;
+}
+.box9 i{
+    position: relative; top: 6px; left: -15px; font-size: 35px; color: rgb(204, 133, 204);
+}
+.box9:hover i{
+    color: white;
+}
+
+
+
+/* image */
+.image{
+    display: flex;
+    justify-content: space-evenly;
+}
+.image3{
+    position: relative;
+    top: 230px;
+    left: -50px;
+}
+.d{
+    width: 180px;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 0px 2px 2px rgba(128, 128, 128, 0.69);
+    border-radius: 15px;
+    position: relative;
+    top: -60px;
+    left: 298px;
+    transition: top ease 0.5s;
+    padding: 10px;
+}
+.image3:hover .d{
+    top: -80px;
+}
+.new{
+    position: absolute;
+    top: 13px;
+    left: 80px;
+    color: green;
+}
+.text-1{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+}
+.text-2{
+    position: absolute;
+    top: 44px;
+    left: 100px;
+}
+/* .img{
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 280px;
+} */
+.link{
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 35px;
+    color: rgb(117, 112, 112);
+    font-weight: bold;
+    box-shadow: 0px 0px 3px 2px rgba(128, 128, 128, 0.64);
+    position: absolute;
+    top: -70px;
+    left: 280px;
+    padding-top: 40px;
+    padding-left: 25px;
+    padding-right: 5px;
+}
+.video{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(237, 228, 228, 0.593);
+    border-radius: 50%;
+    position: absolute;
+    left: 85px;
+    top: 110px;
+}
+.video:hover{
+    background-color: green;
+}
+.one{
+    color: rgb(200, 116, 6);
+}
+.pg{
+    font-size: 8px;
+    position: absolute;
+    left: 25px;
+}
+.two{
+    color: white;
+    background-color: rgb(200, 116, 6);
+    padding: 1px;
+}
+
+
+/* about */
+.about{
+    position: relative;
+    top: 250px;
+    left: 40px;
+    padding: 10px;
+}
+.lg{
+    font-weight: bold;
+    font-size: 35px;
+    position: relative;
+    top: 15px;
+}
+.th{
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
+    position: relative;
+    top: 20px;
+}
+.para{
+    position: relative;
+    top: 50px;
+    line-height: 23px;
+}
+.t1{
+    position: relative;
+    top: 80px;
+}
+.t2{
+    position: relative;
+    top: 100px;
+}
+.t3{
+    position: relative;
+    top: 120px;
+}
+
+
+/* another div */
+.kk{
+    width: 100%;
+    height: 1200px;
+    background-color: rgba(164, 196, 207, 0.157);
+    position: relative;
+    top: 300px;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.child1{
+    width: 270px;
+    height: 380px;
+    background-color: white;
+    position: relative;
+    top: 270px;
+    left: 50px;
+}
+.child2{
+    width: 270px;
+    height: 380px;
+    background-color: white;
+    position: relative;
+    top: 270px;
+    left: 15px;
+}
+.child3{
+    width: 270px;
+    height: 380px;
+    background-color: white;
+    position: relative;
+    top: 270px;
+    right: 15px;
+}
+.child4{
+    width: 270px;
+    height: 380px;
+    background-color: white;
+    position: relative;
+    top: 270px;
+    right: 50px;
+}
+.ch-1{
+    width: 90px;
+    font-size: 20px;
+    text-align: center;
+    color: green;
+    background-color: rgba(202, 252, 229, 0.668);
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    top: 230px;
+    left: 30px;
+}
+.ch-2{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 280px;
+    left: 30px;
+}
+.ch-3{
+    color: grey;
+    font-size: 15px;
+    position: absolute;
+    top: 330px;
+    left: 50px;
+}
+.ch-4{
+    color: grey;
+    font-size: 15px;
+    position: absolute;
+    top: 330px;
+    right: 30px;
+}
+.but{
+    position: absolute;
+    top: 770px;
+}
+.but1{
+    width: 230px;
+    height: 70px;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+}
+.but1:active{
+    background-color: rgba(0, 128, 0, 0.73);
+}
+
+.child1:hover{
+    width: 270px;
+    height: 380px;
+    background-color: green;
+}
+.child2:hover{
+    width: 270px;
+    height: 380px;
+    background-color: green;
+}
+.child3:hover{
+    width: 270px;
+    height: 380px;
+    background-color: green;
+}
+.child4:hover{
+    width: 270px;
+    height: 380px;
+    background-color: green;
+}
+.child1:hover .ak-1{
+    width: 0px;
+    height: 0px;
+}
+.child2:hover .ak-1{
+    width: 0px;
+    height: 0px;
+}
+.child3:hover .ak-1{
+    width: 0px;
+    height: 0px;
+}
+.child4:hover .ak-1{
+    width: 0px;
+    height: 0px;
+}
+
+.child1:hover .ch-1{
+    width: 90px;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    top: 120px;
+    left: 30px;
+}
+.child1:hover .ch-2{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 170px;
+    left: 30px;
+}
+.child1:hover .ch-3{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 220px;
+    left: 50px;
+}
+.child1:hover .ch-4{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 220px;
+    right: 30px;
+}
+
+.child2:hover .ch-1{
+    width: 90px;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    top: 120px;
+    left: 30px;
+}
+.child2:hover .ch-2{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 170px;
+    left: 30px;
+}
+.child2:hover .ch-3{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 220px;
+    left: 50px;
+}
+.child2:hover .ch-4{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 220px;
+    right: 30px;
+}
+
+.child3:hover .ch-1{
+    width: 90px;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    top: 120px;
+    left: 30px;
+}
+.child3:hover .ch-2{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 170px;
+    left: 30px;
+}
+.child3:hover .ch-3{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 220px;
+    left: 50px;
+}
+.child3:hover .ch-4{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 220px;
+    right: 30px;
+}
+
+.child4:hover .ch-1{
+    width: 90px;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    top: 120px;
+    left: 30px;
+}
+.child4:hover .ch-2{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 170px;
+    left: 30px;
+}
+.child4:hover .ch-3{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 220px;
+    left: 50px;
+}
+.child4:hover .ch-4{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 220px;
+    right: 30px;
+}
+
+
+
+
+
+
+/* another div */
+.f-bx{
+    width: 700px;
+    height: 450px;
+    background-color: white;
+    box-shadow: 0px 0px 10px grey;
+    border-radius: 5px;
+    position: relative;
+    top: 70px;
+    /* transform: translatex(240px); */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px;
+}
+.f-bx1{
+    text-align: center;
+    padding-top: 50px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.142);
+    border-right: 1px solid rgba(128, 128, 128, 0.142);
+}
+.f-bx2{
+    text-align: center;
+    padding-top: 50px;
+    padding-right: 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.142);
+}
+.f-bx3{
+    text-align: center;
+    padding-top: 45px;
+    border-right: 1px solid rgba(128, 128, 128, 0.142);
+}
+.f-bx4{
+    text-align: center;
+    padding-top: 45px;
+    padding-right: 20px;
+}
+
+
+
+/* sis & bro */
+.mat{
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+.mat1{
+    text-transform: uppercase;
+    position: relative;
+    top: 230px;
+    left: 165px;
+}
+.mat2{
+    font-size: 48px;
+    font-weight: bold;
+    position: relative;
+    top: 248px;
+    left: 45px;
+    
+}
+.mat3{
+    line-height: 25px;
+    position: relative;
+    top: 410px;
+    right: 330px;
+}
+.sis{
+    width: 460px;
+    height: 640px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.337);
+    position: relative;
+    top: 230px;
+    right: 180px;
+    background-color: white;
+
+}
+.sis1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    border-radius: 50%;
+}
+.sis2{
+    color: grey;
+    font-size: 20px;
+    line-height: 30px;
+    word-spacing: 5px;
+    position: absolute;
+    top: 150px;
+    padding: 20px;
+}
+.bro{
+    width: 460px;
+    height: 730px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.337);
+    position: relative;
+    top: 230px;
+    right: 130px;
+    background-color: white;
+}
+.bro1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    border-radius: 50%;
+}
+.bro2{
+    color: grey;
+    font-size: 20px;
+    line-height: 30px;
+    word-spacing: 5px;
+    position: absolute;
+    top: 150px;
+    padding: 20px;
+}
+
+
+/* another div */
+.pp{
+    width: 800px;
+    height: 180px;
+    background-image: linear-gradient(to right, green, rgb(116, 233, 116));
+    border-radius: 10px;
+    position: relative;
+    top: 350px;
+}
+.pp1{
+    position: absolute;
+    top: 65px;
+    left: 180px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.pp2{
+    position: absolute;
+    top: 95px;
+    left: 85px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.pp3{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: green;
+    font-weight: bold;
+    font-size: 40px;
+    background-color: white;
+    border: 2px solid lightblue;
+    position: absolute;
+    top: 50px;
+    left: 350px;
+}
+.pp3 p{
+    position: absolute;
+    top: -25px;
+    left: 20px;
+}
+.pp4{
+    position: absolute;
+    top: 65px;
+    left: 480px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.pp5{
+    position: absolute;
+    top: 95px;
+    left: 480px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* another div */
+.get{
+    width: 100%;
+    height: 400px;
+    background-color: rgba(164, 196, 207, 0.157);
+    position: relative;
+    top: 350px;
+}
+.get1{
+    font-size: 40px;
+    position: absolute;
+    top: 50px;
+    left: 400px;
+}
+.get2{
+    font-size: 40px;
+    position: absolute;
+    top: 105px;
+    left: 480px;
+}
+.get3{
+    width: 220px;
+    height: 70px;
+    background-color: green;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 250px;
+    left: 570px;
+}
+.get3:active{
+    background-color: rgb(66, 183, 66);
+}
+
+
+
+/* final div */
+.com{
+    position: relative;
+    top: 450px;
+    left: -370px;
+}
+.com1{
+    color: grey;
+    text-transform: uppercase;
+}
+.com2{
+    font-size: 40px;
+}
+.com3{
+    color: rgb(91, 88, 88);
+    font-size: 17px;
+    word-spacing: 3px;
+    line-height: 22px;
+}
+.com-img{
+    position: absolute;
+    top: 10px;
+    left: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.com-img1:hover{
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.271);
+}
+
+
+
+
+/* footer part */
+footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.foot{
+    width: 100%;
+    height: 250px;
+    background-color: rgba(179, 168, 168, 0.177);
+    position: relative;
+    top: 5000px;
+}
+.fimg{
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    top: 50px;
+    left: 230px;
+}
+.cont{
+    color: green;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 40px;
+    left: 630px;
+}
+.call{
+    position: absolute;
+    top: 100px;
+    left: 630px;
+}
+.email{
+    position: absolute;
+    top: 130px;
+    left: 630px;
+}
+.copyright{
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: 200px;
+}
+.social{
+    color: green;
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    top: 40px;
+    left: 1000px;
+}
+span{
+    color: green;
+}
+.i1{
+    color: blue;
+    position: absolute;
+    top: 80px;
+    left: 1060px;
+}
+.i2{
+    color: red;
+    position: absolute;
+    top: 80px;
+    left: 1110px;
+}
+.i3{
+    color: blue;
+    position: absolute;
+    top: 80px;
+    left: 1170px;
+}
+.i4{
+    color: rgb(152, 6, 152);
+    position: absolute;
+    top: 80px;
+    left: 1210px;
+}
+
+.call:hover span{
+    color: rgb(57, 181, 57);
+}
+.email:hover span{
+    color: rgb(57, 181, 57);
+}
+.copyright:hover span{
+    color: rgb(57, 181, 57);
+}
+
+.i1:hover {
+    color: rgb(57, 181, 57);
+}
+.i2:hover{
+    color: rgb(57, 181, 57);
+}
+.i3:hover{
+    color: rgb(57, 181, 57);
+}
+.i4:hover{
+    color: rgb(57, 181, 57);
+}
+
+/* responsiveness */
+@media (max-width: 768px) {
+    body{
+        padding: 10px;
+    }
+
+    section{
+        height: 1000px;
+    }
+
+  .image1 {
+    flex-direction: column;
+  }
+
+  .image2 {
+    flex-direction: column;
+  }
+
+  .nav_bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+ header{
+    flex-direction: column;
+  }
+
+  .boxes{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .image{
+    flex-direction: column;
+  }
+}

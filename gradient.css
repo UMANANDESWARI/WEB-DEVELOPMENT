@@ -1,0 +1,21 @@
+.first{
+    width: 350px;
+    height: 350px;
+    /* background-image: linear-gradient(to bottom right, red, rgb(191, 120, 132),rgb(254, 248, 248)); */
+    background: linear-gradient(to bottom, red, green, transparent), linear-gradient(to right, white, yellow ,transparent)
+    /* background-image: repeating-linear-gradient(to right, red, pink 10%, green 15%); */
+} 
+.second{
+    width: 350px;
+    height: 350px;
+    /* background-image: radial-gradient(red, blue 33%, green 66%); */
+    background-image: repeating-radial-gradient(red 5%, blue 10%, green 15%);
+} 
+.third{
+    width: 350px;
+    height: 350px;
+    /* background-image: radial-gradient(red, blue 33%, green 66%); */
+    /* background-image: conic-gradient(red, blue, green); */
+    /* background-image: conic-gradient(at 50% 40%, red, blue, green, pink); */
+    background-image: repeating-conic-gradient(at 50% 40%, red 5%, blue 10%, green 15%, pink 20%);
+}   

@@ -1,0 +1,102 @@
+body{
+    padding: 0px;
+    margin: 0;
+    background-color: rgba(239, 234, 234, 0.767);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.h{
+    width: auto;
+    height: auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 22px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.shop{
+    height: 800px;
+    /* margin-top: 15px; */
+    padding: 20px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0px 20px;
+}
+.s1{
+    width: 33%;
+    height: 800px;
+    /* border: 1px solid black; */
+    background-color: white;
+}
+.child{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 15px;
+}
+.c1{
+    font-size: 23px;
+    font-weight: bold;
+}
+.c2{
+    width: 23px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: blue;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+}
+.s2{
+    width: 33%;
+    height: 800px;
+    /* border: 1px solid black; */
+    background-color: white;
+}
+.s3{
+    width: 33%;
+    height: 700px;
+    /* border: 1px solid black; */
+    background-color: rgb(246, 226, 201);
+    display: flex;
+}
+.s4{
+    display: flex;
+    flex-direction: column;
+}
+.child1{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    /* justify-content: start; */
+    /* align-items: start; */
+}
+.ch1{
+    color: green;
+    font-weight: bold;
+    font-size: 25px;
+}
+.ch2{
+    color: rgb(5, 47, 5);
+}
+.child2 img{
+    height: auto;
+    border: 1px solid black;
+}
+
+.g{
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 2px solid green;
+
+}
+.g1, .g2, .g3, .g4{
+    border: 2px solid black;
+    
+}
+.g11{
+    /* padding: 10px; */
+}

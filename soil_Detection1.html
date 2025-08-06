@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Soil Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #dcf9d5, #f4fff0);
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2rem;
+      animation: myani 1s ease;
+    }
+
+    .hero img {
+      max-width: 450px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #2e7d32;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      margin-bottom: 1rem;
+      font-size: 20px;
+    }
+
+    .hero button {
+      background-color: #388e3cdc;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.8s;
+    }
+
+    .hero button:hover {
+      background-color: #2e7d32;
+    }
+
+    @keyframes myani{
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .content-box {
+      border: 3px solid #2d5016;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+      animation: ani 1.2s ease-out;
+    }
+
+     @keyframes ani {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .content-box1 {
+      width: 900px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+      animation: ani 1.2s ease-out;
+      margin: 2rem auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      animation: anima 1.5s ease;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #2e7d32;
+      color: white;
+      font-weight: 600;
+    }
+
+    @keyframes anima {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .soil-classification{
+      border: 3px solid #2d5016;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+    }
+
+
+    .upload-panel{
+      border: 3px solid #2d5016;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+    }
+
+    .upload-panel input {
+      margin-top: 0.5rem;
+    }
+
+    .upload-panel button {
+      margin-top: 1rem;
+      background-color: #2e7d32;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 8px solid;
+    }
+
+    .texture, .chemical, .nutrients { 
+      border-color: #43a047; 
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+     .item {
+      margin: 5px 0;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+    .low { color: #e53935; }
+    .optimal { color: #43a047; }
+    .high { color: #fb8c00; }
+    .neutral { color: #1e88e5; }
+    
+
+    .section {
+      animation: fadeInUp 2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section:hover {
+          transform: scale(1.02);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      }
+
+
+
+
+        .crop-suggestion-grid {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f1fff5;
+            border-top: 2px solid #d0e8cf;
+        }
+
+        .crop-suggestion-grid h2 {
+          font-size: 1.8rem;
+          color: #2e7d32;
+        }
+
+        .crop-subtitle {
+          color: #555;
+          margin-top: 0.5rem;
+          font-size: 0.95rem;
+        }
+
+        .grid-suggestions {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 1.2rem;
+          margin-top: 2rem;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .crop-card {
+          background: linear-gradient(145deg, #ffffff, #cdeecd9e);
+          padding: 1rem;
+          border-radius: 14px;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+          font-size: 1rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .crop-card p {
+          margin-top: 0.4rem;
+          font-size: 0.85rem;
+          color: #444;
+        }
+
+        .crop-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+        }
+
+
+        .weather-tips {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #f4fff0;
+            padding: 2rem 1rem;
+            border-top: 1px solid #cfd8dc;
+            margin-top: 50px;
+        }
+
+
+      .salinity-ec{
+        border: 3px solid #2d5016;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+    .salinity-ec p{
+        margin-top: 10px;
+    }
+
+    .fertilizer-recommend{
+      border: 3px solid #2d5016;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+
+    .soil-health-index{
+      border: 3px solid #2d5016;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+
+    .tips:hover, .salinity-ec:hover, .fertilizer-recommend:hover, .soil-health-index:hover{
+        box-shadow: 0px 0px 15px 5px rgb(195, 228, 168);
+        transform: scale(1.03);
+    } 
+
+
+     .tips {
+      border: 3px solid #2d5016;
+      background: #fefefe;
+      padding: 2rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: myani 2s ease;
+      transition: transform 0.5s;
+    }
+
+     .soil-cards {
+      background: #e2f4dd ;
+      padding: 60px 20px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 50px;
+      box-shadow: 0px 0px 5px 2px #e3fcdc;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #2a4d29;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px 20px;
+      width: 300px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.8s ease, box-shadow 0.3s ease;
+      animation: tata 1s ease-in-out;
+    }
+
+    .card h3 {
+      color: #2c6e49;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+
+   @keyframes tata {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .video-section iframe {
+      width: 100%;
+      height: 320px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border: none;
+      animation: animation1 1s ease;
+    }
+
+     @keyframes animation1 {
+      from { 
+        opacity: 0; 
+      }
+      to { 
+        opacity: 1; 
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2e7d32;
+    }
+
+   
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero img {
+        margin-top: 4rem;
+        max-width: 350px;
+      }
+      .weather-tips {
+        flex-direction: column;
+        text-align: center;
+      }
+      .video-section iframe { 
+        height: 200px; 
+      }
+      .irrigation{
+        margin-top: 50px;
+      }
+      
+    }
+
+    
+    @media (min-width: 768px){
+      .hero img {
+        margin-top: 4rem;
+        max-width: 450px;
+      }
+      .content-box1{
+        width: 700px;
+      }
+      .irrigation{
+        margin-top: 50px;
+      }
+       .video-section iframe { 
+        height: 300px; 
+      }
+    }
+     @media (min-width: 1024px){
+      .irrigation{
+        margin-top: 0px;
+      }
+    }
+
+
+   @media (max-width: 425px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem !important;
+  }
+
+  .hero img {
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .content-box, .content-box1,
+  .soil-classification, .upload-panel,
+  .salinity-ec, .fertilizer-recommend,
+  .tips, .soil-health-index {
+    width: 95% !important;
+    margin: 1rem auto;
+    padding: 1.2rem;
+  }
+
+  .hehe, .hehe1, 
+  .salinity-ec, .fertilizer-recommend,
+  .tips, .soil-health-index {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  table th, table td {
+    padding: 0.3rem;
+    font-size: 0.75rem;
+  }
+
+  .grid-suggestions {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .crop-card {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .crop-card p {
+    font-size: 0.75rem;
+  }
+
+  .weather-tips {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .video-section iframe {
+    height: 200px !important;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+}
+
+
+.hehe .content-box{
+  transition: transform 0.5s ease;
+}
+.hehe .content-box:hover{
+  box-shadow: 0 20px 15px rgb(200, 228, 180);
+  transform: translateY(-10px);
+}
+
+tr:hover{
+  box-shadow: 0px 0px 5px 2px rgb(164, 198, 144);
+}
+
+  </style>
+</head>
+<body>
+
+
+    <section class="hero">
+        <div class="hero-text">
+        <h2 style="color: #2d5016; font-size: 50px;">AI-Based Soil Detection System</h2>
+        <p>Upload your soil image or data to get real-time composition, pH level, and crop suggestions with AI insights.</p>
+        <button onclick="scrolltosection()">Get Started</button>
+        </div>
+        <img src="https://media.istockphoto.com/id/479700500/photo/hands-holding-soil-with-young-plant.jpg?s=612x612&w=0&k=20&c=zjOfEyGtyepKOjDZe5dzAagh4zp2oJRAeDfDVnRMyN0=" alt="Soil Analysis">
+    </section>
+
+
+<section class="hehe" style="display: flex; gap:50px; justify-content:space-evenly; flex-wrap:wrap;">
+    <section class="content-box" style="width: 600px; line-height: 25px;">
+        <h2>🌱 Why Soil Quality Detection Matters</h2>
+        <p style="margin-top: 20px;">
+            Soil quality affects everything from crop yield to environmental sustainability. With early detection of factors like pH, moisture, and nutrients, farmers can optimize their practices. This reduces waste, improves crop health, and leads to higher profits with minimal environmental damage.
+        </p>
+    </section>
+
+    <section class="content-box" style="width: 600px;">
+          <h2>📈 Benefits of AI-Based Soil Analysis</h2>
+          <ul type="square" style="text-align: left; margin: auto; margin-top:20px; line-height: 25px; padding-left: 6rem;">
+                <li>Increases crop productivity</li>
+                <li>Provides data-driven crop suggestions</li>
+                <li>Reduces excessive use of fertilizers and water</li>
+                <li>Supports climate-resilient agriculture</li>
+                <li>Detects early soil degradation or salinity</li>
+          </ul>
+    </section>
+</section> 
+
+    <section class="content-box1">
+          <h2>🧾 Soil Types & Their Characteristics</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Soil Type</th>
+                      <th>Texture</th>
+                      <th>Water Holding</th>
+                      <th>Suitable Crops</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>Sandy</td>
+                    <td>Loose, gritty</td>
+                    <td>Low</td>
+                    <td>Carrots, Peanuts</td>
+                  </tr>
+                  <tr>
+                    <td>Clay</td>
+                    <td>Sticky, dense</td>
+                    <td>High</td>
+                    <td>Rice, Broccoli</td>
+                  </tr>
+                  <tr>
+                    <td>Loamy</td>
+                    <td>Balanced, fertile</td>
+                    <td>Moderate</td>
+                    <td>Wheat, Sugarcane</td>
+                  </tr>
+                  <tr>
+                    <td>Peaty</td>
+                    <td>Dark, moist</td>
+                    <td>Very High</td>
+                    <td>Onions, Lettuce</td>
+                  </tr>
+              </tbody>
+          </table>
+</section>
+
+
+<section id="targetSec" class="hehe1" style="display: flex; flex-wrap: wrap;">
+    <section class="soil-classification" style="width: 500px;">
+    <h2>🧭 Soil Type Classification</h2>
+    <p style="margin-top: 10px;">Select detected soil type:</p>
+    <select style="margin-top: 10px; padding: 0.5rem; border-radius: 6px; border: 1px solid #ccc;">
+        <option>Sandy Soil</option>
+        <option>Clay Soil</option>
+        <option>Loamy Soil</option>
+        <option>Peaty Soil</option>
+        <option>Saline Soil</option>
+    </select>
+    </section>
+
+    <section class="upload-panel" style="width: 500px;">
+        <h2>📤 Upload Soil Image</h2>
+        <p style="margin-top: 10px;">Select an image file (JPG, PNG, WebP):</p>
+        <input type="file" accept="image/*" style="margin-top: 10px;">
+        <br>
+        <button onclick="analyzeImage()">Analyze</button>
+    </section>
+</section>
+
+
+  <h1 style="margin-bottom: 10px;">🌱 Soil Quality Report</h1>
+
+  <section style="display: flex; gap: 20px; justify-content:space-evenly; flex-wrap: wrap;">
+  <div class="section texture">
+    <h2>🧪 Soil Texture & Organic Content</h2>
+    <div class="item">Organic Matter: <strong>4.2%</strong> – <span class="optimal">Moderate</span></div>
+    <div class="item">Sand: <strong>42%</strong></div>
+    <div class="item">Clay: <strong>22%</strong></div>
+    <div class="item">→ Likely Texture: <strong>Sandy Loam</strong></div>
+  </div>
+
+  <div class="section chemical">
+    <h2>⚙️ Chemical & Water Properties</h2>
+    <div class="item">pH: <strong>6.4</strong> – <span class="neutral">Neutral</span></div>
+    <div class="item">Moisture: <strong>18%</strong> – <span class="low">Low</span></div>
+  </div>
+
+  <div class="section nutrients">
+    <h2>🌿 Macronutrient Status (NPK)</h2>
+    <div class="item">Nitrogen (N): <span class="low">Low</span></div>
+    <div class="item">Phosphorus (P): <span class="optimal">Optimal</span></div>
+    <div class="item">Potassium (K): <span class="high">High</span></div>
+  </div>
+
+  </section>
+
+    <section class="crop-suggestion-grid">
+  <h2>🌱 Recommended Crops for Your Soil</h2>
+  <p class="crop-subtitle">Based on your soil's pH, moisture & nutrient levels</p>
+  <div class="grid-suggestions">
+    <div class="crop-card">
+      🌾 <strong>Rice</strong>
+      <p>Thrives in moderate pH & good water retention.</p>
+    </div>
+    <div class="crop-card">
+      🌽 <strong>Corn</strong>
+      <p>Requires nitrogen-rich soils and full sun.</p>
+    </div>
+    <div class="crop-card">
+      🥔 <strong>Potato</strong>
+      <p>Grows well in sandy loam with low moisture.</p>
+    </div>
+    <div class="crop-card">
+      🧄 <strong>Garlic</strong>
+      <p>Prefers well-drained soil with neutral pH.</p>
+    </div>
+  </div>
+</section>
+
+    <section class="weather-tips">
+        <div class="weather">
+        <h2>🌤️ Current Weather</h2>
+        <p style="margin-top: 10px;">Peddapuram, 32°C, Humidity: 70%, Wind: 9 km/h</p>
+        </div>
+        <div class="irrigation">
+        <h2>💧 Irrigation Tip</h2>
+        <p style="margin-top: 10px; line-height: 28px;">Next Watering: Tuesday 8 AM<br>Recommended every 3 days</p>
+        </div>
+    </section>
+
+
+<section style="display: flex; flex-wrap:wrap;">
+    <section class="salinity-ec" style="width: 600px; margin-top: 50px; margin-bottom: 70px;">
+    <h2>🌡️ Salinity & EC Reading</h2>
+    <p>Electrical Conductivity: <strong>1.2 dS/m</strong> - <span style="color: orange;">Moderate</span></p>
+    <p>Salinity Level: <strong>Acceptable</strong> for most crops</p>
+    </section>
+
+    <section class="fertilizer-recommend" style="width: 600px;">
+    <h2>💊 Fertilizer Suggestions</h2>
+    <p style="margin-top: 10px;">Based on NPK status:</p>
+    <ul type="square" style="text-align: left; max-width: 600px; margin: auto; line-height: 35px; margin-top: 15px; padding-left: 4rem;">
+        <li><strong>Nitrogen (Low)</strong>: Use Urea or Ammonium Sulphate</li>
+        <li><strong>Phosphorus (Optimal)</strong>: No immediate action required</li>
+        <li><strong>Potassium (High)</strong>: Avoid potash-based fertilizers</li>
+    </ul>
+    </section>
+</section>
+
+
+<section style="display: flex; flex-wrap:wrap;">
+    <section class="tips" style="width: 600px;">
+        <h2>🌿 Soil Health Tips</h2> 
+        <ul type="square" style="text-align: left; padding-left: 4rem; line-height: 32px; margin-top: 15px;">
+        <li>Rotate crops regularly to avoid nutrient depletion.</li>
+        <li>Test your soil at least once a season for better insights.</li>
+        <li>Use organic compost to improve soil structure.</li>
+        <li>Avoid excessive irrigation to maintain aeration.</li>
+        </ul>  
+    </section>
+
+    <section class="soil-health-index" style="width: 600px;">
+    <h2>🧭 Soil Health Index</h2>
+    <div style=" margin: auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: #2e7d32; margin-top: 10px;">
+        76 / 100
+    </div>
+    <p style="color:#96b895; font-weight: bold; margin-top: 10px;">Healthy</p>
+    </section>
+</section>
+
+    <section class="soil-cards">
+        <h2 class="section-title">🔍 Soil Quality Detection Highlights</h2>
+        <div class="card-container">
+    
+              <div class="card">
+                <h3>🧪 Why Detect Soil Quality?</h3>
+                <p>Soil quality affects crop health, yield, and sustainability. Poor soil leads to low productivity and degraded ecosystems.</p>
+              </div>
+
+              <div class="card">
+                <h3>📊 What Do We Measure?</h3>
+                <p>We test pH, moisture, nutrients (NPK), EC, organic matter & more using sensors and analysis techniques.</p>
+              </div>
+
+              <div class="card">
+                <h3>🌱 What Can You Do?</h3>
+                <p>Use organic compost, rotate crops, reduce tillage, and apply balanced fertilizers to restore soil health.</p>
+              </div>
+
+        </div>
+    </section>
+
+    <section class="content-box1 video-section" style="margin-top: 50px;">
+        <h2 style="color: #2e7d32;">📹 Watch: Importance of Soil Health in agriculture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XfqaJqm5nCk?si=m0ob-Yv2P9fF7QT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+
+
+<!-- script -->
+ <script>
+  function analyzeImage() {
+    alert("🔍 Analyzing your soil sample image... Please wait!");
+  }
+  function scrolltosection()
+    {
+        const section = document.getElementById("targetSec");
+        section.scrollIntoView({ behavior: "smooth" });
+    }
+</script>    
+
+
+</body>
+</html>

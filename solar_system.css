@@ -1,0 +1,119 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./starry-galaxy-background_198067-34654.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sun{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 600px;
+}
+.circle5{
+    width: 1300px;
+    height: 1300px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    animation-name: myanimations;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.jupiter{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: -10px;
+    left: 300px;   
+}
+.circle1{
+    width: 1100px;
+    height: 1100px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: relative;
+    top: -15px;
+    animation-name: myanimations;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.mars{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: -60px;
+    left: 500px;   
+}
+.circle2{
+    width: 850px;
+    height: 850px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 240px;
+    animation-name: myanimations;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.earth{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: -20px;
+    left: 150px;   
+}
+.circle3{
+    width: 600px;
+    height: 600px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 370px;
+    animation-name: myanimations;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.venus{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 0px;
+    left: 400px; 
+}
+.circle4{
+    width: 350px;
+    height: 350px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 490px;
+    animation-name: myanimations;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.mercury{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 10px;
+    left: -40px;
+}
+
+
+@keyframes myanimations{
+    0%{
+        transform: rotateZ(0deg) translate(0px);
+    }
+    100%{
+        transform: rotateZ(360deg) translate(0px);
+    }
+}

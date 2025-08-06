@@ -1,0 +1,84 @@
+.parent{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    color: aliceblue;
+    font-size: 15px;
+    text-align: center;
+    background-color: bisque;
+    display: grid;
+    grid-template-rows: 1fr 2fr 3fr;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+.child1{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: end;
+    align-self: end;
+}
+.child2{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: center;
+    align-self: end;
+}
+.child3{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: start;
+    align-self: end;
+}
+.child4{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: end;
+    align-self: center;
+}
+.child5{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: center;
+    align-self: center;
+}
+.child6{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: start;
+    align-self: center;
+}
+.child7{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: end;
+    align-self: start;
+}
+.child8{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: center;
+    align-self: start;
+}
+.child9{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    justify-self: start;
+    align-self: start;
+}

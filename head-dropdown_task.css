@@ -1,0 +1,51 @@
+.logo_container{
+    height: 150px;
+    border: 2px solid black;
+    background-color: rgb(203, 196, 196);
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.logo_container img{
+    position: relative;
+    top: 65px;
+    left: 70px;
+}
+.child{
+    padding: 50px;
+    position: relative;
+    top: 20px;
+    left: 290px;
+}
+.details{
+    display: none;
+    font-size: 20px;
+    margin: 5px;
+    padding: 3px;
+}
+.details:hover{
+    background-color: grey;
+    color: white;
+}
+.child:hover .details{
+    display: block;
+}
+.child1{
+    position: relative;
+    top: 50px;
+    left: 500px;
+    font-size: 50px;
+}
+.child2{
+    display: none;
+    font-size: 20px;
+    margin: 5px;
+    padding: 3px
+}
+.child2:hover{
+    background-color: grey;
+    color: white;
+}
+.child1:hover .child2{
+    display: block;
+}

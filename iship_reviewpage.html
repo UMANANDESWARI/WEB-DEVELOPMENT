@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriAssist - Farming Feedback</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./Header&Footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+    * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3f8f2;
+        color: #2d5016;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+    }
+    .container {
+        background: #fff;
+        max-width: 800px;
+        width: 100%;
+        padding: 25px 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #2d5016;
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+    p {
+        text-align: center;
+        color: #3a6b1c;
+        margin-bottom: 20px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+    label {
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #2d5016;
+    }
+    input, select, textarea {
+        margin-bottom: 15px;
+        padding: 12px;
+        border: 1px solid #b6cdb4;
+        border-radius: 8px;
+        font-size: 16px;
+        background: #f8fff4;
+        color: #2d5016;
+    }
+    textarea {
+        resize: none;
+        height: 90px;
+    }
+    .submit-btn {
+        background: #2d5016;
+        color: #fff;
+        border: none;
+        padding: 14px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .submit-btn:hover {
+        background: #3a6b1c;
+    }
+    .reviews-section {
+        margin-top: 20px;
+    }
+    .reviews-section h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #2d5016;
+        border-bottom: 2px solid #3a6b1c;
+        padding-bottom: 5px;
+    }
+    .review-card {
+        background: #f8fff4;
+        border: 1px solid #d1e5cc;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 12px;
+    }
+    .review-card h3 {
+        font-size: 18px;
+        color: #2d5016;
+        margin-bottom: 5px;
+    }
+    .review-meta {
+        font-size: 14px;
+        color: #3a6b1c;
+        margin-bottom: 10px;
+    }
+    .review-text {
+        font-size: 15px;
+        color: #2d5016;
+        margin-bottom: 8px;
+    }
+    .rating-display {
+        color: #3a6b1c;
+        font-weight: bold;
+    }
+
+
+</style>
+</head>
+<body>
+
+        <header>
+            <div class="header">
+               <a href="Home.html"><img src="./Logo_Agri_Assist.png"  width="160px"></a>
+                <nav class="navigation">
+                        <a href="Home.html" class="tags"><b>Home</b></a>
+                        <div class="drop" ><a class="tags"><b>Categories</b></a>
+                            <div class="dropdown">
+                          <a href="agri-page.html">Agriculture</a>
+                           <a href="Aquaculture.html">Aquaculture</a>
+                           <a href="seri_page.html">Sericulture</a>
+                           <a href="Apiculture.html">Apiculture</a>
+                           <a href="PoultryMain.html">Poultry</a>
+                           <a href="Dairy-page.html">Dairy</a>
+                            </div>
+                            </div>
+                        <a href="Weather1.html" class="tags"><b>Weather</b></a>
+                        <a href="MarketPlace_AGRI.html" class="tags"><b>Market</b></a>
+                        <a href="About-us.html" class="tags"><b>About</b></a>
+                        <a href="iship_contact_us.html" class="tags"><b>Contact Us</b></a>
+                        <a href="project-login.html" class="profile"><b>Login</b></a>
+                </nav>
+                <div onclick="Open()" style="padding-top: 45px;" class="bars"><i class="fa-solid fa-bars"></i></div>
+                <div class="menu_options">
+                <span onclick="Close()">&times;</span>
+                <div><a href="Home.html"><b>Home</b></a></div>
+                         <div class="drop1"><a href="#"><b>Categories</b></a>
+                            <div class="dropdown1">
+                             <a href="agri-page.html">Agriculture</a>
+                           <a href="Aquaculture.html">Aquaculture</a>
+                           <a href="seri_page.html">Sericulture</a>
+                           <a href="Apiculture.html">Apiculture</a>
+                           <a href="PoultryMain.html">Poultry</a>
+                           <a href="Dairy-page.html">Dairy</a>
+                            </div>
+                        </div>
+                        <div><a href="Weather1.html"><b>Weather</b></a></div>
+                        <div><a href="MarketPlace_AGRI.html"><b>Market</b></a></div>
+                        <div><a href="About-us.html"><b>About</b></a></div>
+                        <div><a href="iship_contact_us.html"><b>Contact Us</b></a></div>
+                        <div><a href="project-login.html"><b>Login</b></a></div>
+              </div>
+             <script>
+            function Close(){
+                document.getElementsByClassName("menu_options")[0].style.left="-320px";
+            }
+             function Open(){
+                document.getElementsByClassName("menu_options")[0].style="left:0px";
+            }
+            </script>
+            </div>
+        </header>
+
+
+
+<main>
+<div class="container">
+    <h1>🌾 AgriAssist Feedback</h1>
+    <p>Share your farming experiences and help improve the community!</p>
+
+    <form method="post" action="#">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" placeholder="Your village/city" required>
+
+        <label for="farmingType">Type of Farming</label>
+        <select id="farmingType" name="farmingType" required>
+            <option value="">-- Select Farming Type --</option>
+            <option value="Crop Farming">Crop Farming</option>
+            <option value="Dairy Farming">Dairy Farming</option>
+            <option value="Organic Farming">Organic Farming</option>
+            <option value="Mixed Farming">Mixed Farming</option>
+        </select>
+
+        <label for="feedback">Your Feedback</label>
+        <textarea id="feedback" name="feedback" placeholder="Share your experience..." required></textarea>
+
+        <label for="rating">Rate Your Experience</label>
+        <select id="rating" name="rating" required>
+            <option value="">-- Select Rating --</option>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+
+    <div class="reviews-section">
+        <h2>User Reviews</h2>
+
+        <div class="review-card">
+            <h3>Ravi Kumar</h3>
+            <div class="review-meta">Punjab | Crop Farming</div>
+            <div class="review-text">This platform is very helpful. Seasonal tips helped me increase yield.</div>
+            <div class="rating-display">Rating: 5 / 5</div>
+        </div>
+
+        <div class="review-card">
+            <h3>Anita Sharma</h3>
+            <div class="review-meta">Maharashtra | Organic Farming</div>
+            <div class="review-text">Fertilizer recommendations saved me money and improved soil health.</div>
+            <div class="rating-display">Rating: 4 / 5</div>
+        </div>
+
+        <div class="review-card">
+            <h3>Mohammed Iqbal</h3>
+            <div class="review-meta">Karnataka | Dairy Farming</div>
+            <div class="review-text">Water usage calculator is a great feature. It helps conserve resources.</div>
+            <div class="rating-display">Rating: 5 / 5</div>
+        </div>
+    </div>
+</div>
+</main>
+
+
+<!-- Footer Start -->
+        <footer>
+            <div class="footer">
+                <div class="foot">
+                    <div class="links">
+                        <div class="com">
+                            <div style=" color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif; "><b>Quick Links</b></div>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Home</a>
+                            <a href="Weather1.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Weather</a>
+                            <a href="MarketPlace_AGRI.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Market</a>
+                            <a href="About-us.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">About</a>
+                        </div>
+                        <div class="com">
+                            <div style=" color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif; "><b>Resources</b></div>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">FAQ's</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Blogs</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Guidelines</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Terms & Conditions</a>
+                        </div>
+                        <div class="com11">
+                            <div style="color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif"><b>Contact</b></div>
+                             <div style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; cursor: pointer;">📞 Call: +91 8096542356</div>
+                              <div style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; cursor: pointer;">📧 Email: support@agriassist.com</div>
+                        </div>
+                        <div class="com">
+                            <div style="color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif"><b>Follow Us</b></div>
+                            <div class="com1">
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-facebook"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-youtube"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo"><img src="Logo_Agri_Assist.png" width="250px" height="200px"></div>
+                </div>
+                 <hr/>
+                <div class="copy">&copy; 2025 AgriAssist. All rights reserved.</div>
+            </div>
+        </footer>
+
+</body>
+</html>

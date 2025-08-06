@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart EGG Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffe9cc;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2rem;
+      animation: myani 1s ease;
+    }
+
+    .hero img {
+        height: 350px;
+      max-width: 450px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #bf360c;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      margin-bottom: 1rem;
+      font-size: 20px;
+    }
+
+    .hero button {
+      background-color: #bf360c;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.8s;
+    }
+
+    .hero button:hover {
+      background-color: #bf360ca9;
+    }
+
+    @keyframes myani{
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .content-box {
+        border: 3px solid #bf360c;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+      animation: ani 1.2s ease-out;
+    }
+
+     @keyframes ani {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .content-box1 {
+      width: 900px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+      animation: ani 1.2s ease-out;
+      margin: 2rem auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      animation: anima 1.5s ease;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #bf360cd1;
+      color: white;
+      font-weight: 600;
+    }
+
+    @keyframes anima {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .soil-classification{
+        border: 3px solid #bf360c;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+    }
+
+
+    .upload-panel{
+        border: 3px solid #bf360c;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+    }
+
+    .upload-panel input {
+      margin-top: 0.5rem;
+    }
+
+    .upload-panel button {
+      margin-top: 1rem;
+      background-color: #bf360c;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.106);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 8px solid;
+    }
+
+    .texture, .chemical, .nutrients { 
+      border-color: #bf360c; 
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+     .item {
+      margin: 5px 0;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+    .low { color: #e53935; }
+    .optimal { color: #43a047; }
+    .high { color: #fb8c00; }
+    .neutral { color: #1e88e5; }
+    
+
+    .section {
+      animation: fadeInUp 2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section:hover {
+          transform: scale(1.02);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      }
+
+
+
+
+        .crop-suggestion-grid {
+            text-align: center;
+            padding: 2rem;
+            background-color: #fce2c1ab;
+            border-top: 2px solid #bf360c;
+        }
+
+        .crop-suggestion-grid h2 {
+          font-size: 1.8rem;
+          color: #bf360c;
+        }
+
+        .crop-subtitle {
+          color: #555;
+          margin-top: 0.5rem;
+          font-size: 0.95rem;
+        }
+
+        .grid-suggestions {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 1.2rem;
+          margin-top: 2rem;
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .crop-card {
+          background: linear-gradient(145deg, #ffffff, #bf360c5b);
+          padding: 1rem;
+          border-radius: 14px;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+          font-size: 1rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .crop-card p {
+          margin-top: 0.4rem;
+          font-size: 0.85rem;
+          color: #444;
+        }
+
+        .crop-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+        }
+
+
+        .weather-tips {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #fce2c1c2;
+            padding: 2rem 1rem;
+            border-top: 1px solid #bf360c;
+            margin-top: 50px;
+        }
+
+
+      .salinity-ec{
+        border: 3px solid #bf360c;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+    .salinity-ec p{
+        margin-top: 10px;
+    }
+
+    .fertilizer-recommend{
+        border: 3px solid #bf360c;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+
+    .soil-health-index{
+        border: 3px solid #bf360c;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+
+    .tips:hover, .salinity-ec:hover, .fertilizer-recommend:hover, .soil-health-index:hover{
+        box-shadow: 0px 0px 15px 5px #bf360c71;
+        transform: scale(1.03);
+    } 
+
+
+     .tips {
+        border: 3px solid #bf360c;
+      background: #fefefe;
+      padding: 2rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: myani 2s ease;
+      transition: transform 0.5s;
+    }
+
+     .soil-cards {
+      background: #fce2c1c2;
+      padding: 60px 20px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 50px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #bf360c;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px 20px;
+      width: 400px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.8s ease, box-shadow 0.3s ease;
+      animation: tata 1s ease-in-out;
+    }
+
+    .card h3 {
+      color: #bf360c;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+
+   @keyframes tata {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .video-section iframe {
+      width: 100%;
+      height: 320px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border: none;
+      animation: animation1 1s ease;
+    }
+
+     @keyframes animation1 {
+      from { 
+        opacity: 0; 
+      }
+      to { 
+        opacity: 1; 
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #bf360c;
+    }
+
+   
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero img {
+        margin-top: 4rem;
+        max-width: 350px;
+      }
+      .weather-tips {
+        flex-direction: column;
+        text-align: center;
+      }
+      .video-section iframe { 
+        height: 200px; 
+      }
+      .irrigation{
+        margin-top: 50px;
+      }
+      
+    }
+
+    
+    @media (min-width: 768px){
+      .hero img {
+        margin-top: 4rem;
+        max-width: 450px;
+      }
+      .content-box1{
+        width: 700px;
+      }
+      .irrigation{
+        margin-top: 50px;
+      }
+       .video-section iframe { 
+        height: 300px; 
+      }
+    }
+     @media (min-width: 1024px){
+      .irrigation{
+        margin-top: 0px;
+      }
+    }
+
+
+   @media (max-width: 425px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem !important;
+  }
+
+  .hero img {
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .content-box, .content-box1,
+  .soil-classification, .upload-panel,
+  .salinity-ec, .fertilizer-recommend,
+  .tips, .soil-health-index {
+    width: 95% !important;
+    margin: 1rem auto;
+    padding: 1.2rem;
+  }
+
+  .hehe, .hehe1, 
+  .salinity-ec, .fertilizer-recommend,
+  .tips, .soil-health-index {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  table th, table td {
+    padding: 0.3rem;
+    font-size: 0.75rem;
+  }
+
+  .grid-suggestions {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .crop-card {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .crop-card p {
+    font-size: 0.75rem;
+  }
+
+  .weather-tips {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .video-section iframe {
+    height: 200px !important;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+}
+
+
+.hehe .content-box{
+  transition: transform 0.5s ease;
+}
+.hehe .content-box:hover{
+  box-shadow: 0 20px 15px #bf360c71;
+  transform: translateY(-10px);
+}
+
+tr:hover{
+  box-shadow: 0px 0px 5px 2px #bf360ca9;
+
+}
+
+  </style>
+</head>
+<body>
+
+
+    <section class="hero">
+        <div class="hero-text">
+        <h2 style="font-size: 40px;">AI-Based Poultry Health & Egg Production Tracker</h2>
+        <p style="font-size: 17px;">Upload bird images or enter daily data to get real-time insights on egg yield, hen health, feed efficiency, and environmental alerts using AI analysis.</p>
+
+        <button onclick="scrolltosection()">Get Started</button>
+        </div>
+        <img src="https://img.freepik.com/premium-photo/chicken-farms-production-fresh-healthy-eggs-consumption_763336-1092.jpg" alt="Soil Analysis">
+    </section>
+
+
+<section class="hehe" style="display: flex; gap:50px; justify-content:space-evenly; flex-wrap:wrap;">
+    <section class="content-box" style="width: 600px; line-height: 28px;">
+        <h2>🥚 Why Poultry Health & Egg Tracking Matters</h2>
+        <p style="margin-top: 20px; font-size: 16px;">
+            Monitoring poultry health and egg production is crucial for maintaining flock well-being, ensuring consistent egg yield, and improving farm profitability. Early detection of issues like disease symptoms, feed imbalance, and environmental stress allows for timely intervention. This leads to healthier birds, better egg quality, and reduced operational losses.
+        </p>
+    </section>
+
+    <section class="content-box" style="width: 600px;">
+          <h2>📈 Benefits of AI-Based Poultry Health & Egg Production Tracking</h2>
+            <ul type="square" style="text-align: left; margin: auto; margin-top:20px; line-height: 25px; padding-left: 5rem; font-size: 17px;">
+                <li>Enhances egg production efficiency.</li>
+                <li>Detects early signs of poultry diseases.</li>
+                <li>Optimizes feeding schedules and nutrition plans.</li>
+                <li>Reduces mortality and improves bird welfare.</li>
+                <li>Provides real-time data for decision-making.</li>
+            </ul>
+
+    </section>
+</section> 
+
+    <section class="content-box1">
+          <h2>🧾 Poultry Breeds & Their Characteristics</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Breed</th>
+                        <th>Egg Production Rate</th>
+                        <th>Temperament</th>
+                        <th>Ideal Conditions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>White Leghorn</td>
+                        <td>High (280-320 eggs/year)</td>
+                        <td>Active, flighty</td>
+                        <td>Warm climates, cage or free-range</td>
+                    </tr>
+                    <tr>
+                        <td>Rhode Island Red</td>
+                        <td>Moderate (250-300 eggs/year)</td>
+                        <td>Hardy, docile</td>
+                        <td>Adaptable to all conditions</td>
+                    </tr>
+                    <tr>
+                        <td>Hy-Line Brown</td>
+                        <td>Very High (300-330 eggs/year)</td>
+                        <td>Calm, productive</td>
+                        <td>Controlled indoor housing</td>
+                    </tr>
+                    <tr>
+                        <td>Sussex</td>
+                        <td>Low to Moderate (200-250 eggs/year)</td>
+                        <td>Friendly, calm</td>
+                        <td>Cooler climates, backyard farming</td>
+                    </tr>
+                </tbody>
+            </table>
+
+</section>
+
+
+<section id="targetSec" class="hehe1" style="display: flex; flex-wrap: wrap;">
+    <section class="soil-classification" style="width: 500px;">
+    <h2>🐔 Poultry Breed Selection</h2>
+    <p style="margin-top: 10px;">Select the breed you are monitoring:</p>
+    <select style="margin-top: 10px; padding: 0.5rem; border-radius: 6px; border: 1px solid #ccc;">
+        <option>White Leghorn</option>
+        <option>Rhode Island Red</option>
+        <option>Hy-Line Brown</option>
+        <option>ISA Brown</option>
+        <option>Vanaraja</option>
+        <option>Kadaknath</option>
+        <option>Aseel</option>
+    </select>
+    </section>
+
+    <section class="upload-panel" style="width: 500px;">
+        <h2>📤 Upload Poultry Image</h2>
+        <p style="margin-top: 10px; font-size: 15px;">Upload an image of your bird or egg (JPG, PNG, WebP):</p>
+        <input type="file" accept="image/*" style="margin-top: 10px;">
+        <br>
+        <button onclick="analyzeImage()">Analyze Health</button>
+
+    </section>
+</section>
+
+
+  <h1 style="margin-bottom: 10px;">🐔 Poultry Health & Egg Production Report</h1>
+
+<section style="display: flex; gap: 20px; justify-content:space-evenly; flex-wrap: wrap;">
+  <div class="section texture">
+    <h2>🥚 Egg Production Summary</h2>
+    <div class="item">Daily Average: <strong>85 eggs</strong></div>
+    <div class="item">Laying Rate: <strong>92%</strong> – <span style="color:green;">High</span></div>
+  </div>
+
+  <div class="section chemical">
+    <h2>💊 Bird Health Status</h2>
+    <div class="item">Average Weight: <strong>1.8 kg</strong></div>
+    <div class="item">Temperature: <strong>40.6°C</strong> – <span style="color:green;">Normal</span></div>
+    <div class="item">Symptoms: <strong>None</strong></div>
+  </div>
+
+  <div class="section nutrients">
+    <h2>🌡️ Housing Conditions</h2>
+    <div class="item">Temperature: <strong>28°C</strong></div>
+    <div class="item">Humidity: <strong>65%</strong></div>
+    <div class="item">Ammonia Level: <strong>Low</strong></div>
+  </div>
+</section>
+
+
+
+
+<section class="crop-suggestion-grid">
+    <h2>🐣 Recommended Actions for Flock Health</h2>
+    <p class="crop-subtitle">Based on egg rate, feed intake & health parameters</p>
+    <div class="grid-suggestions">
+    <div class="crop-card">
+        🥚 <strong>Boost Calcium</strong>
+        <p>Improves eggshell strength for laying hens.</p>
+    </div>
+    <div class="crop-card">
+        💧 <strong>Check Water Quality</strong>
+        <p>Ensure clean, fresh water to prevent diseases.</p>
+    </div>
+    <div class="crop-card">
+        🧪 <strong>Vaccination Reminder</strong>
+        <p>Next vaccine due in 7 days for Newcastle disease.</p>
+    </div>
+    <div class="crop-card">
+        🌡️ <strong>Ventilation Check</strong>
+        <p>Maintain airflow to reduce ammonia and heat stress.</p>
+    </div>
+    </div>
+</section>
+
+
+
+    <section class="weather-tips">
+        <div class="weather">
+        <h2>🌤️ Poultry House Climate</h2>
+        <p style="margin-top: 10px;">Peddapuram, 32°C, Humidity: 70%, Wind: 9 km/h</p>
+        </div>
+        <div class="irrigation">
+        <h2>🌀 Ventilation & Cooling Tip</h2>
+        <p style="margin-top: 10px; line-height: 28px;">
+            ⚠️ High heat alert!<br>
+            Turn on exhaust fans and provide electrolytes in water.<br>
+            Recommended: Mist cooling if temp > 30°C
+        </p>
+        </div>
+    </section>
+
+
+<section style="display: flex; flex-wrap:wrap;">
+    <section class="salinity-ec" style="width: 600px; margin-top: 70px; margin-bottom: 70px;">
+    <h2>💧 Water Quality for Poultry</h2>
+    <p>Electrical Conductivity (EC): <strong>1.2 dS/m</strong> - <span style="color: orange;">Borderline Safe</span></p>
+    <p>Salinity Status: <strong>Acceptable</strong> for layers, but monitor regularly.</p>
+    <p style="color: gray; font-size: 0.95rem;">Tip: Ideal EC < 1.0 dS/m for best egg production.</p>
+    </section>
+
+    <section class="fertilizer-recommend" style="width: 600px;">
+    <h2>🍽️ Feed & Supplement Suggestions</h2>
+    <p style="margin-top: 10px;">Based on current egg production and bird health:</p>
+    <ul type="square" style="text-align: left; max-width: 600px; margin: auto; line-height: 35px; margin-top: 15px; padding-left: 3rem; font-size: 15px;">
+        <li><strong>Low Egg Production</strong>: Add layer feed with 16–18% protein</li>
+        <li><strong>Weak Eggshells</strong>: Provide Calcium supplements (e.g., limestone, oyster shell)</li>
+        <li><strong>Heat Stress</strong>: Use Electrolytes and Vitamin C in water</li>
+        <li><strong>Poor Appetite</strong>: Use probiotics and digestive enzymes</li>
+    </ul>
+
+    </section>
+</section>
+
+
+<section style="display: flex; flex-wrap:wrap;">
+    <section class="tips" style="width: 600px;">
+        <h2>🐔 Poultry Health Tips</h2> 
+        <ul type="square" style="text-align: left; padding-left: 2.5rem; line-height: 32px; margin-top: 15px; font-size: 15px;">
+        <li>Provide clean, fresh water daily to avoid dehydration and heat stress.</li>
+        <li>Maintain optimal temperature (21–24°C) in the poultry shed.</li>
+        <li>Use calcium-rich feed to improve eggshell quality.</li>
+        <li>Vaccinate birds as per schedule to prevent common infections.</li>
+        <li>Ensure proper ventilation to reduce respiratory diseases.</li>
+        </ul>
+    </section>
+
+    <section class="soil-health-index" style="width: 600px;">
+    <h2>🐣 Poultry Health Index</h2>
+    <div style="margin: auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: #bf360c; margin-top: 10px;">
+        85 / 100
+    </div>
+    <p style="color: green; font-weight: bold; margin-top: 10px;">Optimal Flock Health</p>
+    </section>
+</section>
+
+
+
+
+    <section class="soil-cards">
+        <h2 class="section-title">🔍 Poultry Health Monitoring Highlights</h2>
+        <div class="card-container">
+
+        <div class="card">
+            <h3>🐣 Why Monitor Poultry Health?</h3>
+            <p>Bird health directly impacts egg quality, production rate, and farm profitability. Early disease detection prevents major losses.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 What Do We Track?</h3>
+            <p>We monitor feed intake, egg count, bird weight, temperature, behavior, and signs of illness using sensors and AI models.</p>
+        </div>
+
+        <div class="card">
+            <h3>🛠️ What Can You Do?</h3>
+            <p>Ensure clean water, balanced feed, vaccinations, and hygiene. Use automated alerts and analysis to optimize flock health.</p>
+        </div>
+
+        </div>
+    </section>
+
+    <section class="content-box1 video-section" style="margin-top: 50px;">
+        <h2 style="color: #bf360c;">📹 Watch: Egg Production & Poultry Health for Poultry Culture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KfeLYL-Lo-0?si=mNT0Nej655TfXs8l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+
+
+<!-- script -->
+ <script>
+  function analyzeImage() {
+    alert("🔍 Analyzing your poultry breed sample image... Please wait!");
+  }
+  function scrolltosection()
+    {
+        const section = document.getElementById("targetSec");
+        section.scrollIntoView({ behavior: "smooth" });
+    }
+</script>    
+
+
+</body>
+</html>

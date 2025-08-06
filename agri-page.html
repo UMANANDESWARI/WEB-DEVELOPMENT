@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.html</title>
+    <link rel="stylesheet" href="aqua-page.css">
+    <link rel="stylesheet" href="./header&footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <style>
+        .header{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #33691e;
+            }
+            .navigation{
+                display: flex;
+                flex-wrap: wrap;
+                /* justify-content: center; */
+                align-items: center;
+                /* justify-content: space-between; */
+                gap: 50px;
+            }
+            .tags{
+                color: white;
+                text-decoration: none;
+                font-size: large;
+                display: block;
+            }
+            .tags:hover{
+                color: lightgreen;
+            }
+            .drop{
+                position: relative;
+                z-index: 999;
+            }
+            .dropdown{
+                display: none;
+                background-color: #ffffff;
+                position: absolute;
+                padding: 10px 15px;
+                gap: 10px;
+                font-size: 18px;
+                margin-top: 5px;
+                border-radius: 10px;
+            }
+            .drop:hover .dropdown{
+                display: block;
+            }
+            .dropdown a{
+                text-decoration: none;
+                color: #33691e;
+            }
+            .dropdown a:hover{
+            color: rgb(101, 196, 5);
+            }
+            .profile{
+                color: #33691e;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: large;
+                background-color: #c9e6bf; 
+                border-radius: 5px;
+                padding: 10px 15px;
+            }
+            .profile:hover{
+                color: white;
+                background-color: rgb(55, 140, 55);
+            }
+            .bars{
+                display: none;
+                color: white;
+                font-size: 30px;
+                text-decoration: none;
+            }
+            .menu_options{
+                position: absolute;
+                top:0px;
+                left:-320px;
+                width: 300px;
+                height: 100svh;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: end;
+                background-color: #33691e;
+                transition: left 0.8s linear;
+                z-index: 999;
+                padding: 0px 10px;
+            }
+            .menu_options div{
+                border-bottom: 1px solid white;
+                border-radius: 5px;
+                width: 100%;
+            }
+            .menu_options a:hover{
+                color: rgb(101, 196, 5);
+            }
+            span{
+                font-size: 50px;
+                cursor: pointer;
+                width: fit-content;
+                color: #ffffff;
+            }
+            .menu_options a{
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+                padding: 10px;
+            }
+            .drop1{
+                position: relative;
+            }
+            .dropdown1{
+                display: none;
+                background-color: #ffffff;
+                position: absolute;
+                border-bottom: 1px solid gray;
+            }
+            .drop1:hover .dropdown1{
+                display: block;
+            }
+            .dropdown1 a{
+                text-decoration: none;
+                color: green;
+                display: flex;
+                flex-direction: column;
+                font-size: 18px;
+            
+            }
+            .dropdown1 a:hover{
+                color: rgb(101, 196, 5);
+            }
+            @media (min-width:320px) and (max-width:920px)
+            {
+                .tags{
+                    display: none;
+                }
+                .profile{
+                    display: none;
+                }
+                .bars{
+                    display: block;
+                }
+            }
+            .footer{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                justify-content: space-around;
+            background-color: #33691e;
+                padding: 30px 0px;
+                gap: 25px;
+                transition: transform 1s linear;
+            }
+            .foot{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px 0px;
+            }
+            .links{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 20px 50px;
+            }
+            .com{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                gap: 10px 0px;
+                padding: 0px 20px;
+            }
+            .com11{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                gap: 10px 0px;
+                padding: 0px 15px;
+            }
+            .com1{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 10px 10px ;
+            }
+            .copy{
+                font-size: 16px;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+            }
+            footer a:hover{
+            transform: translateY(-5px);
+            text-shadow: 0px 0px 5px white;
+            }
+
+            /* General Body and Container Styles */
+body {
+    font-family: Poppins;
+    background: linear-gradient(to bottom right, #d0f1c7, #f4fff0);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.section-hero{
+    margin: 0;
+    left: 0;
+    padding: 0;
+}
+
+/* Hero Section with Video Background Styles */
+.section-hero-video-background {
+    position: relative; /* Crucial for positioning the video and content */
+    left: 0;
+    width: 100%;
+    height: 550px; /* Fixed height for the hero section */
+    overflow: hidden; /* Hide any overflow from the video */
+    display: flex; /* Use flexbox to align content */
+    align-items: center; /* Vertically center content */
+    justify-content: flex-end; /* Align content to the right initially */
+    /* padding: 2rem; Add some padding */
+}
+
+.hero-video-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    z-index: 1; /* Place video behind the content and overlay */
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: cover; /* Ensures the video covers the entire container */
+    filter: brightness(50%); /* Darken the video to improve text readability */
+}
+
+.hero-content-overlay-right {
+    position: relative; /* Ensure content is above the video and overlay */
+    z-index: 3; /* Higher z-index than the video and pseudo-element overlay */
+    max-width: 500px; /* Limit the width of the text content */
+    padding: 2rem;
+    text-align: left; /* Align text within its container */
+    margin-right: 5%; /* Push content to the right, adjust as needed */
+}
+
+.hero-title {
+    font-size: 20px; /* Large text for impact */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: rgb(23, 173, 233); /* Ensure title is white */
+    text-shadow: 4px 4px 8px rgba(48, 46, 46, 0.7), /* Red shadow with some transparency */
+                 -4px -4px 8px rgba(57, 53, 53, 0.3); 
+}
+
+.hero-description-overlay {
+    font-size: 18px;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    color: #f0f0f0; /* Slightly off-white for description */
+    text-shadow: 4px 4px 8px rgba(22, 21, 21, 0.7), /* Red shadow with some transparency */
+                 -4px -4px 8px rgba(57, 53, 53, 0.3); 
+}
+
+/* Feature Icon (common to all feature cards) */
+.feature-icon {
+    font-size: 2.5rem; /* Larger icons */
+    color: #3B82F6; /* Blue color for icons */
+    margin-bottom: 1rem;
+}
+
+        .gradient-bg {
+             background-color: #d0f1c7;
+        }
+        .feature-icon {
+            font-size: 3rem; /* Larger icons */
+            color: #3B82F6; /* Blue color for icons */
+        }
+        .gradient-bg p {
+            font-size: 17px;
+            color: #128961;
+      }
+
+        /* Custom styles for responsiveness and aesthetics */  
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+            background-color: white;
+            border: 0;
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 100px;
+            height: 400px;
+            font-size: 15px;
+            overflow: hidden;
+            color: #388e3cdc;
+        }
+        #cards-section {
+    /* background: linear-gradient(to bottom right, #E0F7FA, #BBDEFB); */
+        background-color: #d9f7db;
+        }
+        .cards h4{
+            font-size: 30px;
+        }
+        .card:hover {
+            transform: translateY(-4px) translateX(7px);
+            box-shadow:  0 0 20px rgba(37, 3, 3, 0.6);
+        }
+        .card:hover .button-ph{
+            display: block;
+        }
+        .icon-small {
+            font-size: 2rem; /* For smaller icons within text */
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        .button-ph{
+           
+            display: none; /* Allows padding and width/height to be set */
+            padding: 12px 25px; /* Generous padding for a clickable area */
+            font-size: 1rem; /* Larger, more readable text */
+            font-weight: 500; /* Semibold */
+            color: white; /* White text for contrast */
+            text-decoration: none; /* Remove underline if it's an <a> tag */
+            border: none; /* No default border */
+            border-radius: 9999px; /* Fully rounded (pill shape) */
+            cursor: pointer; /* Indicates it's clickable */
+            background-color: #2d5016;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft initial shadow */
+            transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
+            position: absolute; /* For pseudo-element effects if needed later */
+            overflow: hidden; /* Important for hover effects that expand */
+            z-index: 1; /* Ensures content is above potential pseudo-elements */
+            left:40px;
+            bottom:15px;
+        }
+        .button-ph:hover{
+            background-color: rgb(60, 170, 60);
+        }
+
+        /* Carousel specific styles */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        #features-carousel-container {
+            width:  100%; ;
+             height: 450px;
+            border-radius: 0.75rem;
+
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+
+        }
+  
+        .h11{
+            font-size: 30px;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(94, 89, 89, 0.6); /* Slightly darker for visibility */
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 9999px; /* Full rounded */
+            font-size: 1.5rem; /* Larger arrow icons */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            padding: 0.75rem 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 9999px;
+        }
+        .carousel-button:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1); /* Slight scale on hover */
+        }
+        .carousel-button.prev {
+            left: 1rem;
+        }
+        .carousel-button.next {
+            right: 1rem;
+        }
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem; /* More space below carousel */
+        }
+
+        .indicator {
+            width: 1rem; /* Larger indicators */
+            height: 1rem; /*Larger indicators */
+            background-color: #62748e; /* Gray-400 */
+            border-radius: 50%;
+            margin: 0 0.35rem; /* More space between indicators */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+   
+        .indicator.active {
+            background-color: #10b981; /* Tailwind emerald-500 */
+            transform: scale(1.2);
+        }
+        #carousel-container {
+            padding: 0;
+            border-radius: 20px;
+            
+
+        }
+        #main-caro{
+            padding: 20px;
+            /*background: linear-gradient(to bottom right, #E0F7FA, #BBDEFB);*/
+
+            
+        }
+
+         .carousel-slide {
+            display: flex;
+            flex: 1 1 100%;            
+            /* box-sizing: border-box; */
+            flex-shrink: 0;
+            display: flex; /* Add display: flex */
+            flex-direction: column; /* To stack icon, title, and text */
+            align-items: center; /* Center horizontally */
+            padding-left: 4em;
+            padding-right: 4em;
+            justify-content: space-evenly; /* Center vertically */
+            align-items: flex-start;
+            text-align: center;
+            font-size: 26px;
+            z-index: 999;            
+        }
+        #main-caro h1{
+            color: #000000;
+            font-size: 35px;
+        }
+        .carousel-slide p{
+            margin-top: 15px;
+            font-size: 20px;
+        }
+        #slide1{
+            background-image: url('https://tse3.mm.bing.net/th/id/OIP.QHhlk3uufDVWfhG_7cXIhgHaE8?r=0&w=1000&h=667&rs=1&pid=ImgDetMain&o=7&rm=3');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100px;
+            z-index: 999;
+        }
+
+        #slide2 {
+            background-image: url('https://img.freepik.com/premium-photo/potato-plantations-thrive-fields-alongside-vegetable-rows-landscape-characterized-by-agricul_908985-84962.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 999;
+            color: black;
+        }
+        #slide2 h1{
+            color: black;
+            font-size: 30px;
+        }
+        #slide3{
+            background-image: url('https://www.epicgardening.com/wp-content/uploads/2023/09/Aphids-on-Plant.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* filter: brightness(50%); */
+            color: black;
+        }
+        #slide4{
+           background-image: url('https://tse2.mm.bing.net/th/id/OIP.mOXXG2vprxtSW19ZzCYWVQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #slide5{
+            background-image: url('https://personalinjurylawcal.com/wp-content/uploads/2022/08/gardening-without-pesticides-min-scaled.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;   
+            color: white;         
+        }
+        #slide5 h1{
+            color: white;
+        }
+        #slide6{
+             background-image: url('https://tse4.mm.bing.net/th/id/OIP.qzm7iRJrqlPIS0C3PuJABwHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #slide6 h1{
+            color: white;
+        }
+        #slide7{
+             background-image: url('https://media.istockphoto.com/photos/seedling-are-growing-from-the-rich-soil-concept-of-business-growth-picture-id1351542181?b=1&k=20&m=1351542181&s=170667a&w=0&h=_uXlRBkNSbKdZS7IGj8f4bKwcdluWphptf5jYIChZWI=');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #slide7 h1{
+            color: white;
+        }
+        #slide8{
+            background-image: url('https://thumbs.dreamstime.com/b/protecting-plant-9782169.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        
+
+
+        /* Specific height adjustments for carousels */
+        #hero-carousel-container {
+            min-height: 380px; /* Increased height for hero carousel */
+            display: flex; /* To center content vertically */
+            align-items: center;
+            justify-content: center;
+        }
+        #hero-carousel-slides .carousel-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        
+        #features-carousel-slides{
+            height: 100%; /* Ensure slides take full height of container */
+        }
+        #features-carousel-slides .carousel-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%; /* Make slide take full height of container */
+        }
+
+        #app-carousel-container {
+            min-height: 580px; /* Increased height for app carousel */
+            max-width: 750px; /* Increased max-width for app carousel */
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #app-carousel-slides .carousel-slide img {
+            max-height: 550px; /* Ensure images fit within the increased height */
+            width: auto; /* Maintain aspect ratio */
+            object-fit: contain;
+        }
+/* Indicators */
+
+
+
+.call-to-action-section {
+   /* background: linear-gradient(to right, #6EE7B7, #0356db); /* gradient-bg */
+    color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+footer.call-to-action-section {
+   /* background: linear-gradient(to right, #6EE7B7, #3B82F6); /* Teal to Blue gradient */
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.call-to-action-title {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 700; /* bold */
+    margin-bottom: 1.5rem;
+}
+
+.call-to-action-description {
+    font-size: 1.125rem; /* lg */
+    margin-bottom: 2rem;
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-button {
+    background-color: white;
+    color: #2563eb; /* blue-600 */
+    font-weight: 600; /* semibold */
+    padding: 0.75rem 2rem;
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #f3f4f6; /* gray-100 */
+    transform: scale(1.05);
+}
+
+
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    /* Header Responsive */
+    .header-container {
+        flex-direction: row;
+    }
+    .site-title {
+        margin-bottom: 0;
+    }
+
+    /* Hero Section Responsive */
+    .section-hero-video-background {
+        height: 500px; /* Adjust height for medium screens */
+        justify-content: center; /* Center content horizontally on smaller screens */
+        text-align: center; /* Center text within its block on smaller screens */
+    }
+    .hero-content-overlay-right {
+        margin-right: 0; /* Remove right margin on smaller screens */
+        max-width: 90%; /* Allow content to take more width */
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-description-overlay {
+        font-size: 1rem;
+    }
+
+    /* Grid Features Responsive */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+
+    /* Call to Action Responsive */
+    .call-to-action-title {
+        font-size: 2.25rem; /* 4xl */
+    }
+    .call-to-action-description {
+        font-size: 1.25rem; /* xl */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Hero Section Responsive */
+    .section-hero-video-background {
+        height: 600px; /* Adjust height for large screens */
+        justify-content: flex-end; /* Align content to the right */
+        text-align: left; /* Align text within its container */
+    }
+    .hero-content-overlay-right {
+        margin-right: 5%; /* Push content to the right */
+        max-width: 500px; /* Reset max-width for larger screens */
+    }
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    .hero-description-overlay {
+        font-size: 1.125rem;
+    }
+
+    /* Grid Features Responsive */
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+     <header>
+            <div class="header">
+               <a href="Home.html"><img src="./iship_loggo.png"  width="160px"></a>
+                <nav class="navigation">
+                        <a href="Home.html" class="tags"><b>Home</b></a>
+                        <div class="drop" ><a class="tags" href="Home.html"><b>Categories</b></a>
+                            <div class="dropdown">
+                          <a href="Agriculture.html">Agriculture</a>
+                           <a href="Aquaculture.html">Aquaculture</a>
+                           <a href="Sericulture.html">Sericulture</a>
+                           <a href="Apiculture.html">Apiculture</a>
+                           <a href="Dairy_Poultry.html">Poultry</a>
+                           <a href="Organic.html">Dairy</a>
+                            </div>
+                            </div>
+                        <a href="Home.html" class="tags"><b>Weather</b></a>
+                        <a href="Home.html" class="tags"><b>Market</b></a>
+                        <a href="iship.html" class="tags"><b>About</b></a>
+                        <a href="Home.html" class="tags"><b>Contact Us</b></a>
+                        <a href="Home.html" class="profile"><b>Login</b></a>
+                </nav>
+                <div onclick="Open()" style="padding-top: 45px;" class="bars"><i class="fa-solid fa-bars"></i></div>
+                <div class="menu_options">
+                <span onclick="Close()">&times;</span>
+                <div><a href="Home.html"><b>Home</b></a></div>
+                         <div class="drop1"><a href="Home.html"><b>Categories</b></a>
+                            <div class="dropdown1">
+                            <a href="Agriculture.html">Agriculture</a>
+                           <a href="Aquaculture.html">Aquaculture</a>
+                           <a href="Sericulture.html">Sericulture</a>
+                           <a href="Apiculture.html">Apiculture</a>
+                           <a href="Dairy_Poultry.html">Poultry</a>
+                           <a href="Organic.html">Dairy</a>
+                            </div>
+                        </div>
+                        <div><a href="Home.html"><b>Weather</b></a></div>
+                        <div><a href="Home.html"><b>Market</b></a></div>
+                        <div><a href="Home.html"><b>About</b></a></div>
+                        <div><a href="Home.html"><b>Contact Us</b></a></div>
+                        <div><a href="Home.html"><b>Login</b></a></div>
+              </div>
+             <script>
+            function Close(){
+                document.getElementsByClassName("menu_options")[0].style.left="-320px";
+            }
+             function Open(){
+                document.getElementsByClassName("menu_options")[0].style="left:0px";
+            }
+            </script>
+            </div>
+        </header>
+
+
+
+
+     <section class="section-hero">
+        <div class="section-hero-video-background">
+            <video class="hero-video-banner" src="./agriculture.mp4" autoplay loop muted playsinline></video>
+            <div class="hero-content-overlay-right">
+                <h3 class="hero-title">What is Smart Agriculture and How SmartCultivo Helps?</h3>
+                <p class="hero-description-overlay">
+                    Agriculture, the backbone of our economy, is evolving with technology. SmartCultivo brings advanced AI, IoT, and data analysis to revolutionize how farmers manage soil, crops, irrigation, and weather challenges.
+                </p>
+                <p class="hero-description-overlay">
+                    Designed with simplicity and power, SmartCultivo empowers every farmer — from beginner to expert — with tools to increase yield, improve soil health, and ensure sustainable farming practices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white" id="main-caro" >
+        <div class="container mx-auto px-4" id="carousel-container">
+            <!-- <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">SmartCultivo: Your Complete Aquaculture Partner</h3> -->
+
+            <div  class="carousel-container" id="features-carousel-container">
+                <div class="carousel-slides" id="features-carousel-slides">
+                    <!-- Feature Card 1: Soil Monitoring -->
+                    <div class="carousel-slide" id="slide1">
+                        <span class="feature-icon mb-2">🌱</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Soil Health Insights</h1>
+                        <p class="text-left">
+                            Monitor soil type, texture, moisture, and nutrient levels in real-time. SmartCultivo's AI suggests corrective measures like compost addition, organic fertilizers, or pH balancing — ensuring your soil stays healthy for optimal crop growth.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2: Crop Selection -->
+                    <div class="carousel-slide" id="slide2">
+                        <span class="feature-icon mb-2">🌾</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Crop Suggestion Engine</h1>
+                        <p class="text-left">
+                            Choose the best crops for your region, season, and soil condition. SmartCultivo analyzes weather forecasts, soil pH, and market demand to recommend the highest-yield crops specific to your land.
+                        </p>
+                    </div>
+
+                   <!-- Feature Card 3: Disease & Pest Alert -->
+                    <div class="carousel-slide" id="slide3">
+                        <span class="feature-icon mb-2">🦠</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Disease & Pest Alerts</h1>
+                        <p class="text-left">
+                            AI-powered image recognition and weather mapping help detect early signs of crop disease or pest infestations. Get alert notifications and organic or chemical treatment options instantly.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 4: Irrigation Management -->
+                    <div class="carousel-slide" id="slide4">
+                        <span class="feature-icon mb-2">💧</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Smart Irrigation</h1>
+                        <p class="text-left">
+                            Conserve water while ensuring healthy crops. SmartCultivo uses soil moisture sensors, rainfall data, and crop water needs to guide you on when and how much to irrigate, preventing overwatering or drought stress.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 5: Fertilizer Advisory -->
+                    <div class="carousel-slide" id="slide5">
+                        <span class="feature-icon mb-2">🌿</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Fertilizer Recommendations</h1>
+                        <p class="text-left">
+                            Get AI-backed fertilizer plans based on crop stage, soil test reports, and weather patterns. Reduce costs and avoid nutrient leaching while boosting productivity sustainably.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 6: Weather Forecast & Alerts -->
+                    <div class="carousel-slide" id="slide6">
+                        <span class="feature-icon mb-2">⛅</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Weather Intelligence</h1>
+                        <p class="text-left">
+                            Access precise, hyperlocal forecasts and receive alerts for rainfall, frost, heatwaves, or storms. Plan field operations like sowing, irrigation, and harvesting with confidence.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 7: Market Insights -->
+                    <div class="carousel-slide" id="slide7">
+                        <span class="feature-icon mb-2">📈</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Real-Time Market Trends</h1>
+                        <p class="text-left">
+                            Track mandi prices and get sell/buy recommendations based on trends. Find nearby procurement centers, cooperatives, and bulk buyers to ensure better income.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 8: Farmer Network & Community -->
+                    <div class="carousel-slide" id="slide8">
+                        <span class="feature-icon mb-2">🤝</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Farmer Support & Community</h1>
+                        <p class="text-left">
+                            Connect with local experts, government schemes, and other farmers. Share experiences, get feedback, and grow together. SmartCultivo builds a supportive agricultural ecosystem.
+                        </p>
+                    </div>
+
+                </div>
+                <button class="carousel-button prev" onclick="prevSlide('features-carousel')">&#10094;</button>
+                <button class="carousel-button next" onclick="nextSlide('features-carousel')">&#10095;</button>
+            </div>
+            <div class="carousel-indicators" id="features-carousel-indicators"></div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white" id="cards-section">
+        <div class="container mx-auto px-4" id="cards-main-container" >
+            <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">SmartCultivo: Your Complete Agriculture Partner 🌾</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="cards-container">
+
+                <div class="card p-8 rounded-xl flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">💧</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Soil & Water pH Monitoring</h4>
+                    <p class="text-gray-600 text-left">
+                        Deploy IoT sensors to continuously track soil moisture, temperature, and pH levels. Get real-time alerts like “High soil acidity” or “Low moisture” with actionable advice such as “Apply lime” or “Initiate drip irrigation” to optimize crop health.
+                    </p>
+                    <a href="#"><button class="button-ph">Know More</button></a>
+                </div>
+
+                <div class="card p-8 rounded-xl flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">🌽</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Crop Advisory & Rotation Planning</h4>
+                    <p class="text-gray-600 text-left">
+                        Access expert crop guidance based on soil analysis, weather patterns, and market needs. Get seasonal rotation plans to preserve soil nutrients and prevent pest cycles, ensuring long-term productivity.
+                    </p>
+                    <a href="#"><button class="button-ph">Know More</button></a>
+                </div>
+
+                <div class="card p-8 rounded-xl flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">🥕</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">AI-Powered Smart Feeding</h4>
+                    <p class="text-gray-600 text-left">
+                        Get AI-powered fertilization schedules tailored to crop stage, weather, and soil condition. Receive alerts for overuse or deficiency and suggestions on compost, NPK blends, or organic boosters to enhance yield.
+                    </p>
+                    <a href="#"><button class="button-ph">Know More</button></a>
+                </div>
+
+                <div class="card p-8 rounded-xl flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">🛡️</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Crop Disease & Pest Monitoring</h4>
+                    <p class="text-gray-600 text-left">
+                        Use AI + image recognition to detect crop diseases or pests early. Get instant suggestions for eco-friendly or conventional treatments and connect with local agri-experts for support.
+                    </p>
+                    <a href="#"><button class="button-ph">Know More</button></a>
+                </div>
+
+                <div class="card p-8 rounded-xl flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">📊</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Market & Supply Chain Dashboard</h4>
+                    <p class="text-gray-600 text-left">
+                        Monitor real-time mandi prices for your crops. Get alerts on ideal selling times, and find nearby processing centers, warehouses, or transport options to boost your income and reduce waste.
+                    </p>
+                    <a href="#"><button class="button-ph">Know More</button></a>
+                </div>
+
+                <div class="card p-8 rounded-xl flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">🌦️</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Weather Forecast & Crop Planning</h4>
+                    <p class="text-gray-600 text-left">
+                        Access hyperlocal weather forecasts and receive alerts for rain, drought, or extreme conditions. Plan sowing, irrigation, and harvesting efficiently to avoid losses and boost productivity.
+                    </p>
+                    <a href="#"><button class="button-ph">Know More</button></a>
+                </div>
+
+            </div>
+
+    </section>
+
+
+
+    <!-- Call to Action Section -->
+      <section class="gradient-bg text-green py-16 text-center" >
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-bold mb-6">🌾 Transform Your Farm with Smart Agriculture</h3>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                Unlock smarter decisions, healthier soil, and better yields with SmartCultivo — your all-in-one digital farming assistant.
+            </p>
+            <button class="bg-white text-green-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                📞 Talk to Our Agri Team
+            </button>
+        </div>
+    </section>
+
+     <footer>
+            <div class="footer">
+                <div class="foot">
+                    <div class="links">
+                        <div class="com">
+                            <div style=" color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif; "><b>Quick Links</b></div>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Home</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Weather</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Market</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">About</a>
+                        </div>
+                        <div class="com">
+                            <div style=" color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif; "><b>Resources</b></div>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">FAQ's</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Blogs</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Guidelines</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Terms & Conditions</a>
+                        </div>
+                        <div class="com11">
+                            <div style="color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif"><b>Contact</b></div>
+                             <div style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; cursor: pointer;">📞 Call: +91 8096542356</div>
+                              <div style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; cursor: pointer;">📧 Email: support@agriassist.com</div>
+                        </div>
+                        <div class="com">
+                            <div style="color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif"><b>Follow Us</b></div>
+                            <div class="com1">
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-facebook"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-youtube"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo"><img src="./iship_loggo.png" width="250px" height="200px"></div>
+                </div>
+                 <hr/>
+                <div class="copy">&copy; 2025 AgriAssist. All rights reserved.</div>
+            </div>
+        </footer>
+
+
+
+ <script>
+        // Carousel logic
+        const carousels = {}; // Store carousel states by ID
+
+        function initializeCarousel(carouselId) {
+            const slidesContainer = document.getElementById(`${carouselId}-slides`);
+            // Check if slidesContainer exists before proceeding
+            if (!slidesContainer) {
+                console.warn(`Carousel container with ID '${carouselId}-slides' not found.`);
+                return;
+            }
+
+            const slides = slidesContainer.children;
+            const indicatorsContainer = document.getElementById(`${carouselId}-indicators`);
+            let currentIndex = 0;
+
+            carousels[carouselId] = {
+                slidesContainer,
+                slides,
+                indicatorsContainer,
+                currentIndex
+            };
+
+            // Create indicators
+            if (indicatorsContainer) { // Check if indicatorsContainer exists
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.classList.add('indicator');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                }
+            }
+            updateCarousel(carouselId); // Initial update
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel || !carousel.slidesContainer) return; // Defensive check
+
+            carousel.slidesContainer.style.transform = `translateX(-${carousel.currentIndex * 100}%)`;
+
+            // Update indicators
+            if (carousel.indicatorsContainer) { // Check if indicatorsContainer exists
+                Array.from(carousel.indicatorsContainer.children).forEach((indicator, index) => {
+                    if (index === carousel.currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+        function nextSlide(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return; // Defensive check
+            carousel.currentIndex = (carousel.currentIndex + 1) % carousel.slides.length;
+            updateCarousel(carouselId);
+        }
+
+        function prevSlide(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return; // Defensive check
+            carousel.currentIndex = (carousel.currentIndex - 1 + carousel.slides.length) % carousel.slides.length;
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, index) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return; // Defensive check
+            carousel.currentIndex = index;
+            updateCarousel(carouselId);
+        }
+
+        // Initialize carousels on window load
+        window.onload = function() {
+            initializeCarousel('hero-carousel');
+            initializeCarousel('features-carousel');
+            initializeCarousel('app-carousel');
+
+            // Optional: Auto-advance carousels
+            setInterval(() => nextSlide('hero-carousel'), 5000); // Change slide every 5 seconds
+            setInterval(() => nextSlide('features-carousel'), 6000); // Features carousel auto-advance
+            setInterval(() => nextSlide('app-carousel'), 4000); // Change slide every 4 seconds
+        };
+    </script>
+
+    
+
+
+</body>
+</html>

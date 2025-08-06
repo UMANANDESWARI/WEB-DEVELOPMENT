@@ -1,0 +1,363 @@
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+.logo{
+    width: 220px;
+    height: 70px;
+    background-image: url("./2.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 15px;
+    left: 25px;
+}
+.mymaya{
+    position: absolute;
+    top: 40px;
+    left: 310px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.895);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 1s linear;
+}
+.owlcode{
+    position: absolute;
+    top: 40px;
+    left: 440px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.895);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 1s linear;
+}
+.aptlogic{
+    position: absolute;
+    top: 40px;
+    left: 580px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.895);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 1s linear;
+}
+
+.contact{
+    position: absolute;
+    top: 40px;
+    left: 720px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.895);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 1s linear;
+}
+.login{
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 16px;
+    color: white;
+    padding-top: 15px;
+    text-align: center;
+    background-color: green;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 1s linear;
+}
+.login:hover{
+    background-color: lightgreen;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: green;
+}
+.images{
+    width: 100%;
+    height: 680px;
+    background-color: rgba(128, 128, 128, 0.301);
+}
+.image1{
+    width: 520px;
+    height: 500px;
+    background-image: url("./1st.png");
+    background-size: contain;
+    position: absolute;
+    top: 220px;
+    left: 200px;
+}
+.image2{
+    width: 630px;
+    height: 600px;
+    background-image: url("./3.png");
+    background-size: contain;
+    position: absolute;
+    top: 180px;
+    right: 120px;
+}
+.box{
+    width: 370px;
+    height: 140px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 380px;
+}
+.text1{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.log{
+    width: 220px;
+    height: 70px;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+}
+.text2{
+    position: absolute;
+    top: 60px;
+    right: 105px;
+    color: rgb(234, 57, 86);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.text3{
+    position: absolute;
+    top: 75px;
+    right: 30px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logos{
+    width: 100%;
+    height: 130px;
+    background-image: linear-gradient(to right, green,rgb(83, 221, 83),rgba(162, 255, 0, 0.989));
+    display: flex;
+}
+.b1{
+    width: 500px;
+    height: 130px;
+    border-right: 0.1px groove white;
+    position: relative;
+}
+.r1{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 50px;
+    top: 50px;
+    left: 150px;
+    background-color: rgba(0, 255, 89, 0.373);
+}
+.b2{
+    width: 400px;
+    height: 130px;
+     border-right: 0.1px groove white;
+     position: relative;
+}
+.r2{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 50px;
+    top: 50px;
+    left: 50px;
+    background-color: rgba(0, 255, 89, 0.373);
+}
+.b3{
+    width: 400px;
+    height: 130px;
+     border-right: 0.1px groove white;
+     position: relative;
+}
+.r3{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 50px;
+    top: 50px;
+    left: 50px;
+    background-color: rgba(0, 255, 89, 0.373);
+}
+.b4{
+    width: 500px;
+    height: 130px;
+     border-right: 0.1px groove white;
+     position: relative;
+}
+.r4{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 50px;
+    top: 50px;
+    left: 50px;
+    background-color: rgba(0, 255, 89, 0.373);
+}
+.n1{
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    position: absolute;
+    left: 240px;
+    top: 60px;
+}
+.n2{
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    position: absolute;
+    left: 140px;
+    top: 60px;
+}
+.n3{
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    position: absolute;
+    left: 140px;
+    top: 60px;
+}
+.n4{
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    position: absolute;
+    left: 140px;
+    top: 60px;
+}
+.top{
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+.text{
+    font-size: 37px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 120px;
+    left: 600px;
+}
+/* .boxes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: absolute;
+    top: 230px;
+    left: 150px;
+}
+.box1{
+    width: 350px;
+    background-color: rgba(0, 255, 47, 0.23);
+    border-radius: 10px;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+}
+.box2{
+    width: 350px;
+   background-color: rgba(255, 0, 225, 0.151);
+    border-radius: 10px;
+      margin: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+}
+.box3{
+    width: 350px;
+     background-color: rgba(0, 255, 47, 0.23);
+    border-radius: 10px;
+      margin: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+}
+.box4{
+    width: 350px;
+     background-color: rgba(255, 0, 225, 0.151);
+    border-radius: 10px;
+      margin: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+}
+.box5{
+    width: 350px;
+     background-color: rgba(0, 255, 47, 0.23);
+    border-radius: 10px;
+      margin: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+}
+.box6{
+    width: 350px;
+      background-color: rgba(255, 0, 225, 0.151);
+    border-radius: 10px;
+      margin: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+}
+.box7{
+    width: 350px;
+    background-color: rgba(0, 255, 47, 0.23);
+    border-radius: 10px;
+      margin: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+}
+.box8{
+    width: 350px;
+      background-color: rgba(255, 0, 225, 0.151);
+    border-radius: 10px;
+      margin: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+}
+.box9{
+    width: 350px;
+    
+    background-color: rgba(0, 255, 47, 0.23);
+    border-radius: 10px;
+     margin: 20px;
+      padding-top: 25px;
+} */
+ .boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: absolute;
+    top: 230px;
+    left: 150px;
+}
+
+.boxes div {
+    width: 350px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+    border-radius: 10px;
+}
+
+/* Individual styling */
+.box1, .box3, .box5, .box7, .box9 {
+    background-color: rgba(0, 255, 47, 0.23);
+}
+
+.box2, .box4, .box6, .box8 {
+    background-color: rgba(255, 0, 225, 0.151);
+}
+/* .box9 {
+    background-color: gold;
+     border: 2px dashed orange; 
+} 
+*/

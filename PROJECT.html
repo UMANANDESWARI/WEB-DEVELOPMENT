@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSphere 🌱 - Empowering Farmers Across India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f9ff 100%);
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .category-selector, .language-toggle {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-selector:hover, .language-toggle:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .voice-btn, .weather-widget {
+            background: #ff6b35;
+            border: none;
+            color: white;
+            padding: 0.7rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .voice-btn:hover, .weather-widget:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><path d="M0,0 C150,100 350,0 500,50 C650,100 850,0 1000,50 L1000,100 L0,100 Z"></path></svg>') repeat-x;
+            background-size: 1000px 100px;
+            animation: wave 20s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-1000px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,107,53,0.4);
+        }
+
+        /* Farming Type Cards */
+        .farming-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .farming-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d5a27;
+        }
+
+        .farming-cards {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #2d5a27;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Quick Tools Preview */
+        .tools-preview {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .tools-preview h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3436;
+        }
+
+        .tools-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff6b35;
+        }
+
+        .tool-card h3 {
+            margin-bottom: 1rem;
+            color: #2d5a27;
+        }
+
+        .tool-preview {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #a8e6cf;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #b2bec3;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #a8e6cf;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            background: #636e72;
+            padding: 0.7rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #a8e6cf;
+            transform: scale(1.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .farming-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                🌱 AgroSphere
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#crop-tool">Crop Tool</a>
+                <a href="#soil-advice">Soil Advice</a>
+                <a href="#upload">Upload Image</a>
+                <a href="#marketplace">Marketplace</a>
+                <a href="#tutorials">Tutorials</a>
+            </nav>
+            
+            <div class="header-controls">
+                <select class="category-selector">
+                    <option>🌾 Crop Farming</option>
+                    <option>🐄 Dairy</option>
+                    <option>🐔 Poultry</option>
+                    <option>🐟 Aquaculture</option>
+                    <option>🌱 Organic</option>
+                </select>
+                
+                <select class="language-toggle">
+                    <option>English</option>
+                    <option>తెలుగు</option>
+                    <option>हिंदी</option>
+                </select>
+                
+                <button class="voice-btn" title="Voice Instructions">🎤</button>
+                <button class="weather-widget" title="Weather & Alerts">🌤️</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Empowering Farmers Across India</h1>
+            <p>Your comprehensive platform for smart farming solutions, crop guidance, and agricultural expertise</p>
+            
+            <div class="cta-buttons">
+                <a href="#suggest-crops" class="cta-btn">
+                    🌿 Suggest Crops
+                </a>
+                <a href="#detect-disease" class="cta-btn">
+                    📸 Detect Disease
+                </a>
+                <a href="#marketplace" class="cta-btn">
+                    🗺️ Marketplace
+                </a>
+                <a href="#learn-more" class="cta-btn">
+                    🧑‍🏫 Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farming Type Highlights -->
+    <section class="farming-section">
+        <h2>Choose Your Farming Focus</h2>
+        <div class="farming-cards">
+            <div class="card" onclick="selectFarmingType('crop')">
+                <div class="card-icon">🌾</div>
+                <h3>Crop Farming</h3>
+                <p>Crop recommendations, disease detection, yield optimization</p>
+            </div>
+            
+            <div class="card" onclick="selectFarmingType('dairy')">
+                <div class="card-icon">🐄</div>
+                <h3>Dairy Farming</h3>
+                <p>Cattle health, milk production, feed management</p>
+            </div>
+            
+            <div class="card" onclick="selectFarmingType('poultry')">
+                <div class="card-icon">🐔</div>
+                <h3>Poultry</h3>
+                <p>Chicken health, egg production, vaccination schedules</p>
+            </div>
+            
+            <div class="card" onclick="selectFarmingType('organic')">
+                <div class="card-icon">🌱</div>
+                <h3>Organic Farming</h3>
+                <p>Natural fertilizers, pest control, certification guidance</p>
+            </div>
+            
+            <div class="card" onclick="selectFarmingType('aquaculture')">
+                <div class="card-icon">🐟</div>
+                <h3>Aquaculture</h3>
+                <p>Fish farming, pond management, water quality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Tool Previews -->
+    <section class="tools-preview">
+        <h2>Smart Tools at Your Fingertips</h2>
+        <div class="tools-container">
+            <div class="tool-card">
+                <div class="tool-icon">📄</div>
+                <h3>Crop Suggestion</h3>
+                <p>Get personalized crop recommendations based on your soil and climate</p>
+                <div class="tool-preview">
+                    Select your region: <select><option>Telangana</option><option>Andhra Pradesh</option></select>
+                </div>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">📸</div>
+                <h3>Disease Detection</h3>
+                <p>Upload plant images for instant disease identification and treatment</p>
+                <div class="tool-preview">
+                    <div style="border: 2px dashed #ccc; padding: 1rem;">
+                        📷 Drop image here or click to upload
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">🔔</div>
+                <h3>Smart Alerts</h3>
+                <p>Receive weather warnings and farming reminders</p>
+                <div class="tool-preview">
+                    ⚠️ Heavy rain expected tomorrow<br>
+                    🌡️ Optimal planting temperature reached
+                </div>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">🗣️</div>
+                <h3>Voice Instructions</h3>
+                <p>Get farming advice in your local language through voice commands</p>
+                <div class="tool-preview">
+                    <button onclick="playDemo()" style="background: #ff6b35; color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px;">
+                        ▶️ Play Demo (Telugu)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 1800-AGRO-HELP</p>
+                <p>📧 support@agrosphere.in</p>
+                <p>💬 WhatsApp: +91-98765-43210</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#tutorials">Video Tutorials</a>
+                <a href="#experts">Ask Experts</a>
+                <a href="#community">Farmer Community</a>
+                <a href="#marketplace">Marketplace</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#youtube">📺</a>
+                    <a href="#telegram">📱</a>
+                    <a href="#facebook">👥</a>
+                    <a href="#twitter">🐦</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#credits">Credits</a>
+                <p>© 2025 AgroSphere. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Functions
+        function selectFarmingType(type) {
+            alert(`Selected: ${type} farming. Tools will be filtered for ${type} farming.`);
+        }
+
+        function playDemo() {
+            alert('Voice demo would play: "నేల పరిస్థితులను బట్టి మీకు వరి సాగుకు మంచి సమయం" (Rice cultivation is ideal based on your soil conditions)');
+        }
+
+        // Voice button functionality
+        document.querySelector('.voice-btn').addEventListener('click', function() {
+            alert('Voice recognition activated. Say your farming question...');
+        });
+
+        // Weather widget functionality
+        document.querySelector('.weather-widget').addEventListener('click', function() {
+            alert('Weather: 28°C, Partly Cloudy\n🌧️ Rain expected tomorrow\n🌱 Good for planting season');
+        });
+
+        // Smooth scrolling for CTA buttons
+        document.querySelectorAll('.cta-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert(`Navigating to ${this.textContent.trim()}...`);
+            });
+        });
+    </script>
+</body>
+</html>

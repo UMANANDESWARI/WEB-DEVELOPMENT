@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sericulture - AgriAssist</title>
+    <link rel="stylesheet" href="aqua-page.css">
+    <link rel="stylesheet" href="./Header&Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+            
+body {
+    font-family: Poppins;
+    background-color: #f3e8ff;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.section-hero{
+    margin: 0;
+    left: 0;
+    padding: 0;
+}
+
+/* Hero Section with Video Background Styles */
+.section-hero-video-background {
+    position: relative; /* Crucial for positioning the video and content */
+    left: 0;
+    width: 100%;
+    height: 550px; /* Fixed height for the hero section */
+    overflow: hidden; /* Hide any overflow from the video */
+    display: flex; /* Use flexbox to align content */
+    align-items: center; /* Vertically center content */
+    justify-content: flex-end; /* Align content to the right initially */
+    /* padding: 2rem; Add some padding */
+}
+
+.hero-video-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    z-index: 1; /* Place video behind the content and overlay */
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: cover; /* Ensures the video covers the entire container */
+    filter: brightness(50%); /* Darken the video to improve text readability */
+}
+
+.hero-content-overlay-right {
+    position: relative; /* Ensure content is above the video and overlay */
+    z-index: 3; /* Higher z-index than the video and pseudo-element overlay */
+    max-width: 500px; /* Limit the width of the text content */
+    padding: 2rem;
+    text-align: left; /* Align text within its container */
+    margin-right: 5%; /* Push content to the right, adjust as needed */
+}
+
+.hero-title {
+    font-size: 20px; /* Large text for impact */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: rgb(23, 173, 233); /* Ensure title is white */
+    text-shadow: 4px 4px 8px rgba(48, 46, 46, 0.7), /* Red shadow with some transparency */
+                 -4px -4px 8px rgba(57, 53, 53, 0.3); 
+}
+
+.hero-description-overlay {
+    font-size: 18px;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    color: #f0f0f0; /* Slightly off-white for description */
+    text-shadow: 4px 4px 8px rgba(22, 21, 21, 0.7), /* Red shadow with some transparency */
+                 -4px -4px 8px rgba(57, 53, 53, 0.3); 
+}
+
+/* Feature Icon (common to all feature cards) */
+.feature-icon {
+    font-size: 2.5rem; /* Larger icons */
+    color: #3B82F6; /* Blue color for icons */
+    margin-bottom: 1rem;
+}
+
+        .gradient-bg {
+             background-color: #e8daf7;
+        }
+        .feature-icon {
+            font-size: 3rem; /* Larger icons */
+            color: #3B82F6; /* Blue color for icons */
+        }
+        .gradient-bg p {
+            font-size: 17px;
+            color:  #6a1b9a;
+      }
+
+        /* Custom styles for responsiveness and aesthetics */  
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+            background-color: white;
+            border: 0;
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 100px;
+            height: 400px;
+            font-size: 15px;
+            overflow: hidden;
+            color:  #6a1b9a;
+        }
+        #cards-section {
+    /* background: linear-gradient(to bottom right, #E0F7FA, #BBDEFB); */
+        background-color: #f3e8ff;
+        }
+        .cards h4{
+            font-size: 30px;
+        }
+        .card:hover {
+            transform: translateY(-4px) translateX(7px);
+            box-shadow:  0 0 20px rgba(37, 3, 3, 0.6);
+        }
+        .card:hover .button-ph{
+            display: block;
+        }
+        .icon-small {
+            font-size: 2rem; /* For smaller icons within text */
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        .button-ph{
+           
+            display: none; /* Allows padding and width/height to be set */
+            padding: 12px 25px; /* Generous padding for a clickable area */
+            font-size: 1rem; /* Larger, more readable text */
+            font-weight: 500; /* Semibold */
+            color: white; /* White text for contrast */
+            text-decoration: none; /* Remove underline if it's an <a> tag */
+            border: none; /* No default border */
+            border-radius: 9999px; /* Fully rounded (pill shape) */
+            cursor: pointer; /* Indicates it's clickable */
+            background-color:  #6a1b9a;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft initial shadow */
+            transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
+            position: absolute; /* For pseudo-element effects if needed later */
+            overflow: hidden; /* Important for hover effects that expand */
+            z-index: 1; /* Ensures content is above potential pseudo-elements */
+            left:40px;
+            bottom:15px;
+        }
+        .button-ph:hover{
+            background-color:  #691b9aa1;
+        }
+
+        /* Carousel specific styles */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        #features-carousel-container {
+            width:  100%; ;
+             height: 450px;
+            border-radius: 0.75rem;
+
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+
+        }
+  
+        .h11{
+            font-size: 30px;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(94, 89, 89, 0.6); /* Slightly darker for visibility */
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 9999px; /* Full rounded */
+            font-size: 1.5rem; /* Larger arrow icons */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            padding: 0.75rem 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 9999px;
+        }
+        .carousel-button:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1); /* Slight scale on hover */
+        }
+        .carousel-button.prev {
+            left: 1rem;
+        }
+        .carousel-button.next {
+            right: 1rem;
+        }
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem; /* More space below carousel */
+        }
+
+        .indicator {
+            width: 1rem; /* Larger indicators */
+            height: 1rem; /*Larger indicators */
+            background-color: #62748e; /* Gray-400 */
+            border-radius: 50%;
+            margin: 0 0.35rem; /* More space between indicators */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+   
+        .indicator.active {
+            background-color:  #6a1b9a; /* Tailwind emerald-500 */
+            transform: scale(1.2);
+        }
+        #carousel-container {
+            padding: 0;
+            border-radius: 20px;
+            
+
+        }
+        #main-caro{
+            padding: 20px;
+            /*background: linear-gradient(to bottom right, #E0F7FA, #BBDEFB);*/
+
+            
+        }
+
+         .carousel-slide {
+            display: flex;
+            flex: 1 1 100%;            
+            /* box-sizing: border-box; */
+            flex-shrink: 0;
+            display: flex; /* Add display: flex */
+            flex-direction: column; /* To stack icon, title, and text */
+            align-items: center; /* Center horizontally */
+            padding-left: 4em;
+            padding-right: 4em;
+            justify-content: space-evenly; /* Center vertically */
+            align-items: flex-start;
+            text-align: center;
+            font-size: 26px;
+            z-index: 999;            
+        }
+        #main-caro h1{
+            color: #000000;
+            font-size: 35px;
+        }
+        .carousel-slide p{
+            margin-top: 15px;
+            font-size: 20px;
+        }
+        #slide1{
+            background-image: url('https://cdn1.byjus.com/wp-content/uploads/2019/08/Silkworm-Rearing-in-Sericulture.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100px;
+            z-index: 999;
+            color: white;
+        }
+        #slide2 {
+            background-image: url('https://img.freepik.com/premium-photo/potato-plantations-thrive-fields-alongside-vegetable-rows-landscape-characterized-by-agricul_908985-84962.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 999;
+            color: black;
+        }
+        #slide2 h1{
+            color: black;
+            font-size: 30px;
+        }
+        #slide3{
+            background-image: url('https://ieltssimulator.com/wp-content/uploads/2023/03/Understanding-Mealybugs-1152x648-1-1030x344.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* filter: brightness(50%); */
+            color: white;
+        }
+        #slide3 h1{
+            color: white;
+        }
+        #slide4{
+           background-image: url('https://thumbs.dreamstime.com/b/silk-worm-cocoons-production-process-egg-to-57914121.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #slide4 h1{
+            color: white;
+        }
+        #slide5{
+            background-image: url('https://ichef.bbci.co.uk/news/624/mcs/media/images/74079000/jpg/_74079025_honeybeebbc.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;   
+            color: white;         
+        }
+        #slide5 h1{
+            color: white;
+        }
+        #slide6{
+             background-image: url('https://cdn.shopify.com/s/files/1/0499/3482/7672/files/material_silk.jpg?v=13085534722430952332');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #slide6 h1{
+            color: white;
+        }
+        #slide7{
+             background-image: url('https://media.istockphoto.com/photos/seedling-are-growing-from-the-rich-soil-concept-of-business-growth-picture-id1351542181?b=1&k=20&m=1351542181&s=170667a&w=0&h=_uXlRBkNSbKdZS7IGj8f4bKwcdluWphptf5jYIChZWI=');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #slide7 h1{
+            color: white;
+        }
+        #slide8{
+            background-image: url('https://thumbs.dreamstime.com/b/protecting-plant-9782169.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        
+
+
+        /* Specific height adjustments for carousels */
+        #hero-carousel-container {
+            min-height: 380px; /* Increased height for hero carousel */
+            display: flex; /* To center content vertically */
+            align-items: center;
+            justify-content: center;
+        }
+        #hero-carousel-slides .carousel-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        
+        #features-carousel-slides{
+            height: 100%; /* Ensure slides take full height of container */
+        }
+        #features-carousel-slides .carousel-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%; /* Make slide take full height of container */
+        }
+
+        #app-carousel-container {
+            min-height: 580px; /* Increased height for app carousel */
+            max-width: 750px; /* Increased max-width for app carousel */
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #app-carousel-slides .carousel-slide img {
+            max-height: 550px; /* Ensure images fit within the increased height */
+            width: auto; /* Maintain aspect ratio */
+            object-fit: contain;
+        }
+/* Indicators */
+
+
+
+.call-to-action-section {
+   /* background: linear-gradient(to right, #6EE7B7, #0356db); /* gradient-bg */
+    color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+footer.call-to-action-section {
+   /* background: linear-gradient(to right, #6EE7B7, #3B82F6); /* Teal to Blue gradient */
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.call-to-action-title {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 700; /* bold */
+    margin-bottom: 1.5rem;
+}
+
+.call-to-action-description {
+    font-size: 1.125rem; /* lg */
+    margin-bottom: 2rem;
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-button {
+    background-color: white;
+    color:  #2563eb; /* blue-600 */
+    font-weight: 600; /* semibold */
+    padding: 0.75rem 2rem;
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #f3f4f6; /* gray-100 */
+    transform: scale(1.05);
+}
+
+
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    /* Header Responsive */
+    .header-container {
+        flex-direction: row;
+    }
+    .site-title {
+        margin-bottom: 0;
+    }
+
+    /* Hero Section Responsive */
+    .section-hero-video-background {
+        height: 500px; /* Adjust height for medium screens */
+        justify-content: center; /* Center content horizontally on smaller screens */
+        text-align: center; /* Center text within its block on smaller screens */
+    }
+    .hero-content-overlay-right {
+        margin-right: 0; /* Remove right margin on smaller screens */
+        max-width: 90%; /* Allow content to take more width */
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-description-overlay {
+        font-size: 1rem;
+    }
+
+    /* Grid Features Responsive */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+
+    /* Call to Action Responsive */
+    .call-to-action-title {
+        font-size: 2.25rem; /* 4xl */
+    }
+    .call-to-action-description {
+        font-size: 1.25rem; /* xl */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Hero Section Responsive */
+    .section-hero-video-background {
+        height: 600px; /* Adjust height for large screens */
+        justify-content: flex-end; /* Align content to the right */
+        text-align: left; /* Align text within its container */
+    }
+    .hero-content-overlay-right {
+        margin-right: 5%; /* Push content to the right */
+        max-width: 500px; /* Reset max-width for larger screens */
+    }
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    .hero-description-overlay {
+        font-size: 1.125rem;
+    }
+
+    /* Grid Features Responsive */
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    }
+}
+    </style>
+
+</head>
+<body>  
+    <header>
+            <header>
+            <div class="header">
+               <a href="Home.html"><img src="./Logo_Agri_Assist.png"  width="160px"></a>
+                <nav class="navigation">
+                        <a href="Home.html" class="tags"><b>Home</b></a>
+                        <div class="drop" ><a class="tags"><b>Categories</b></a>
+                            <div class="dropdown">
+                          <a href="agri-page.html">Agriculture</a>
+                           <a href="Aquaculture.html">Aquaculture</a>
+                           <a href="seri_page.html">Sericulture</a>
+                           <a href="Apiculture.html">Apiculture</a>
+                           <a href="PoultryMain.html">Poultry</a>
+                           <a href="Dairy-page.html">Dairy</a>
+                            </div>
+                            </div>
+                        <a href="Weather1.html" class="tags"><b>Weather</b></a>
+                        <a href="MarketPlace_AGRI.html" class="tags"><b>Market</b></a>
+                        <a href="About-us.html" class="tags"><b>About</b></a>
+                        <a href="iship_contact_us.html" class="tags"><b>Contact Us</b></a>
+                        <a href="project-login.html" class="profile"><b>Login</b></a>
+                </nav>
+                <div onclick="Open()" style="padding-top: 45px;" class="bars"><i class="fa-solid fa-bars"></i></div>
+                <div class="menu_options">
+                <span onclick="Close()">&times;</span>
+                <div><a href="Home.html"><b>Home</b></a></div>
+                         <div class="drop1"><b>Categories</b>
+                            <div class="dropdown1">
+                             <a href="agri-page.html">Agriculture</a>
+                           <a href="Aquaculture.html">Aquaculture</a>
+                           <a href="seri_page.html">Sericulture</a>
+                           <a href="Apiculture.html">Apiculture</a>
+                           <a href="PoultryMain.html">Poultry</a>
+                           <a href="Dairy-page.html">Dairy</a>
+                            </div>
+                        </div>
+                        <div><a href="Weather1.html"><b>Weather</b></a></div>
+                        <div><a href="MarketPlace_AGRI.html"><b>Market</b></a></div>
+                        <div><a href="About-us.html"><b>About</b></a></div>
+                        <div><a href="iship_contact_us.html"><b>Contact Us</b></a></div>
+                        <div><a href="project-login.html"><b>Login</b></a></div>
+              </div>
+             <script>
+            function Close(){
+                document.getElementsByClassName("menu_options")[0].style.left="-320px";
+            }
+             function Open(){
+                document.getElementsByClassName("menu_options")[0].style="left:0px";
+            }
+            </script>
+            </div>
+        </header>
+
+
+      <section class="section-hero">
+        <div class="section-hero-video-background">
+            <video class="hero-video-banner" src="./sericulture.mp4" autoplay loop muted playsinline></video>
+            <div class="hero-content-overlay-right">
+                <h3 class="hero-title">What is Sericulture and How SmartCultivo Helps?</h3>
+                <p class="hero-description-overlay">
+                    Sericulture, the art of cultivating silkworms for silk production, is a vital agricultural activity. SmartCultivo brings cutting-edge AI and data analysis to this sector, helping you make informed decisions for healthier silkworms and increased silk yield.
+                </p>
+                <p class="hero-description-overlay">
+                    Our platform is built with **full user-friendliness** in mind, ensuring that every farmer, from beginner to expert, can harness the power of data and AI to optimize their operations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white" id="main-caro" >
+        <div class="container mx-auto px-4" id="carousel-container">
+            <div  class="carousel-container" id="features-carousel-container">
+                <div class="carousel-slides" id="features-carousel-slides">
+                    <div  class="carousel-slide" id="slide1">
+                        <span class="feature-icon mb-2">🐛</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Silkworm Rearing Insights</h1>
+                        <p class=" text-left">
+                            Unlock the secrets to successful silkworm rearing with SmartCultivo. Our AI-powered platform provides real-time, data-driven advice to optimize your silk yields and ensure thriving sericulture operations. Leveraging geo-data, climate, and mulberry leaf quality analysis, SmartCultivo helps you make informed decisions, reducing crop failure and increasing productivity in your silk farms. From smart rearing calendars to real-time advisory, we empower you with the insights needed for healthier silkworms and increased income.
+                        </p>
+                    </div>
+
+                    <div class="carousel-slide" id="slide2" >
+                        <span class="feature-icon mb-4">🌿</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Mulberry & Leaf Management</h1>
+                        <p class=" text-left">
+                            Maintain optimal mulberry leaf conditions with SmartCultivo's continuous monitoring. Our AI analyzes leaf moisture, nutrient levels, and disease presence to ensure high-quality feed. Get proactive alerts and recommendations to safeguard your stock and maximize success.
+                        </p>        </div>
+
+                    <div class="carousel-slide" id="slide3" >
+                        <span class="feature-icon mb-4">🦠</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Disease Prevention & Hygiene</h1>
+                        <p  class=" text-left">
+                            SmartCultivo delivers proactive alerts and critical insights to help you prevent common silkworm diseases. Our AI system detects early signs of distress, safeguarding your yields with timely interventions and preventative measures for vital and productive silkworms.
+                        </p>        </div>
+
+                    <div class="carousel-slide" id="slide4">
+                        <span class="feature-icon mb-4">🍽️</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Feeding & Nutrition Management</h1>
+                        <p class=" text-left">
+                            Optimize feeding schedules and mulberry leaf quantities for maximum silkworm growth and minimal waste. SmartCultivo's AI provides data-driven recommendations, considering instar, growth stage, and environmental conditions for precise feed dosage. This improves efficiency, reduces waste, and lowers costs.
+                        </p>         </div>
+
+                    <div class="carousel-slide" id="slide5">
+                        <span class="feature-icon mb-4">⚕️</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Species-Specific Rearing Guidance</h1>
+                        <p class=" text-left">
+                        Whether it's Bombyx mori or other sericigenous insects, get tailored advice specific to your silkworm species. Our platform understands diverse needs, providing targeted support and optimized recommendations for breeding, feeding, and environmental management for healthy growth and optimal yield.
+                        </p>    </div>
+
+                    <div class="carousel-slide" id="slide6">
+                        <span class="feature-icon mb-4">📈</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Cocoon Quality & Harvest Monitoring</h1>
+                        <p class=" text-left">
+                                Stay ahead of market trends with SmartCultivo's forecasting. Our insights help you cultivate what's in high demand, leading to better profits. We analyze real-time market data, including local and regional demands, to provide precise recommendations on silk varieties, aligning your efforts with profitable opportunities.
+                        </p>         </div>
+
+                    <div class="carousel-slide" id="slide7">
+                        <span class="feature-icon mb-4">💹</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Sustainable Sericulture Practices</h1>
+                        <p class=" text-left">
+                        Embrace eco-friendly practices and minimize your environmental footprint. SmartCultivo provides insights on efficient resource use and minimizing environmental impact, contributing to a healthier, more sustainable sericulture ecosystem and future for the silk industry.
+                        </p>         </div>
+
+                    <div class="carousel-slide" id="slide8">
+                        <span class="feature-icon mb-4">🔄</span>
+                        <h1 class="text-xl font-semibold text-gray-900 mb-3">Real-Time Sericulture Advisory</h1>
+                        <p class=" text-left">
+                                Get instant, AI-powered recommendations for your sericulture operations, anytime, anywhere. Make smarter decisions based on live data, leveraging geo-data, mulberry variety, and weather for precise, real-time rearing advisory. Adapt quickly to changing conditions, ensuring optimal care and maximizing silk yields.
+                        </p>        </div>
+                </div>
+                <button class="carousel-button prev" onclick="prevSlide('features-carousel')">&#10094;</button>
+                <button class="carousel-button next" onclick="nextSlide('features-carousel')">&#10095;</button>
+            </div>
+            <div class="carousel-indicators" id="features-carousel-indicators"></div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white" id="cards-section">
+        <div class="container mx-auto px-4" id="cards-main-container" >
+            <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">SmartCultivo: Your Complete Sericulture Partner 🐛</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="cards-container" >
+
+                <div class="card  p-8 rounded-xl  flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">🌡️</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Real-Time Rearing House Climate Monitoring</h4>
+                    <p class="text-gray-600 text-left">
+                        Utilize IoT sensors for temperature, humidity, and air quality. Get instant alerts for imbalances like "High Humidity" or "Temperature Fluctuations" with actionable advice to keep silkworms healthy.
+                    </p>        
+                    <a href="">
+                        <button class="button-ph">Know More</button>
+                    </a>
+                </div>
+
+                <div class="card  p-8 rounded-xl  flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">🌱</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Mulberry Cultivation & Leaf Quality Advisory</h4>
+                    <p class="text-gray-600 text-left">
+                        Comprehensive guidance for cultivating high-quality mulberry leaves. Includes expert recommendations on soil, irrigation, nutrient management, and advice on leaf harvesting and storage.
+                    </p>
+                    <a href="">
+                        <button class="button-ph">Know More</button>
+                    </a>
+                </div>
+                <div class="card  p-8 rounded-xl  flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">🍎</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Optimal Feeding Schedules </h4>
+                    <p class="text-gray-600 text-left">
+                        Receive AI-based feeding schedules customized to silkworm instar, variety, and environmental conditions. Get precise mulberry leaf dosage and type recommendations, with immediate alerts for issues like overfeeding.
+                    </p>
+                    <a href="">
+                        <button class="button-ph">Know More</button>
+                    </a>
+                </div>
+
+                <div class="card  p-8 rounded-xl  flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">⚕️</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Silkworm Disease & Health Monitoring</h4>
+                    <p class="text-gray-600 text-left">
+                        Use our AI + image recognition tool to detect disease, pests, or deficiencies. Get treatment solutions (organic/chemical) and connect with local sericulture experts or government departments.
+                    </p>    
+                    <a href="">
+                        <button class="button-ph">Know More</button>
+                    </a>
+                </div>
+
+                <div class="card  p-8 rounded-xl flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">💹</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Market & Logistics Dashboard for Silk</h4>
+                    <p class="text-gray-600 text-left">
+                        Track real-time market prices for cocoons and raw silk. Get "Sell Now" alerts based on price trends and locate nearby reeling units, silk mills, and bulk buyers.
+                    </p>
+                    <a href="">
+                        <button class="button-ph">Know More</button>
+                    </a>
+                </div>
+
+                <div class="card p-8 rounded-xl  flex flex-col items-center text-center">
+                    <span class="feature-icon mb-4">🌦️</span>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Weather Impact Analysis for Sericulture</h4>
+                    <p class="text-gray-600 text-left">
+                    Track real-time local weather and receive "Adverse Weather Alerts" for conditions impacting mulberry growth and silkworm health. Get proactive advice on how weather changes affect rearing and feeding schedules.
+                    </p>
+                    <a href="">
+                        <button class="button-ph">Know More</button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="gradient-bg text-purple py-16 text-center" >
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-bold mb-6">🐛 Ready to Elevate Your Sericulture Game?</h3>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                Experience the intelligence and simplicity of SmartCultivo — your partner for sustainable, high-yield silk farming.        
+            </p>
+            <button class="bg-white text-purple-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                📞 Contact Us Today
+            </button>
+        </div>
+    </section>
+
+        <footer>
+            <div class="footer">
+                <div class="foot">
+                    <div class="links">
+                        <div class="com">
+                            <div style=" color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif; "><b>Quick Links</b></div>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Home</a>
+                            <a href="Weather1.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Weather</a>
+                            <a href="MarketPlace_AGRI.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Market</a>
+                            <a href="About-us.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">About</a>
+                        </div>
+                        <div class="com">
+                            <div style=" color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif; "><b>Resources</b></div>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">FAQ's</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Blogs</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Guidelines</a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; ">Terms & Conditions</a>
+                        </div>
+                        <div class="com11">
+                            <div style="color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif"><b>Contact</b></div>
+                             <div style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; cursor: pointer;">📞 Call: +91 8096542356</div>
+                              <div style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif; cursor: pointer;">📧 Email: support@agriassist.com</div>
+                        </div>
+                        <div class="com">
+                            <div style="color: white; font-size: 18px; font-family: Arial, Helvetica, sans-serif"><b>Follow Us</b></div>
+                            <div class="com1">
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-facebook"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-youtube"></i></a>
+                            <a href="Home.html" style="text-decoration: none; color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; "><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo"><img src="Logo_Agri_Assist.png" width="250px" height="200px"></div>
+                </div>
+                 <hr/>
+                <div class="copy">&copy; 2025 AgriAssist. All rights reserved.</div>
+            </div>
+        </footer>
+
+<script>
+        // Carousel logic
+        const carousels = {}; // Store carousel states by ID
+
+        function initializeCarousel(carouselId) {
+            const slidesContainer = document.getElementById(`${carouselId}-slides`);
+            // Check if slidesContainer exists before proceeding
+            if (!slidesContainer) {
+                console.warn(`Carousel container with ID '${carouselId}-slides' not found.`);
+                return;
+            }
+
+            const slides = slidesContainer.children;
+            const indicatorsContainer = document.getElementById(`${carouselId}-indicators`);
+            let currentIndex = 0;
+
+            carousels[carouselId] = {
+                slidesContainer,
+                slides,
+                indicatorsContainer,
+                currentIndex
+            };
+
+            // Create indicators
+            if (indicatorsContainer) { // Check if indicatorsContainer exists
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.classList.add('indicator');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                }
+            }
+            updateCarousel(carouselId); // Initial update
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel || !carousel.slidesContainer) return; // Defensive check
+
+            carousel.slidesContainer.style.transform = `translateX(-${carousel.currentIndex * 100}%)`;
+
+            // Update indicators
+            if (carousel.indicatorsContainer) { // Check if indicatorsContainer exists
+                Array.from(carousel.indicatorsContainer.children).forEach((indicator, index) => {
+                    if (index === carousel.currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+        function nextSlide(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return; // Defensive check
+            carousel.currentIndex = (carousel.currentIndex + 1) % carousel.slides.length;
+            updateCarousel(carouselId);
+        }
+
+        function prevSlide(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return; // Defensive check
+            carousel.currentIndex = (carousel.currentIndex - 1 + carousel.slides.length) % carousel.slides.length;
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, index) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return; // Defensive check
+            carousel.currentIndex = index;
+            updateCarousel(carouselId);
+        }
+
+        // Initialize carousels on window load
+        window.onload = function() {
+            initializeCarousel('hero-carousel');
+            initializeCarousel('features-carousel');
+            initializeCarousel('app-carousel');
+
+            // Optional: Auto-advance carousels
+            setInterval(() => nextSlide('hero-carousel'), 5000); // Change slide every 5 seconds
+            setInterval(() => nextSlide('features-carousel'), 6000); // Features carousel auto-advance
+            setInterval(() => nextSlide('app-carousel'), 4000); // Change slide every 4 seconds
+        };
+</script>
+
+</body>
+</html>

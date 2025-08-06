@@ -1,0 +1,26 @@
+.para-1{
+    color: blue;
+}
+
+.para-2{
+    text-align: right;
+}
+
+.para-3{
+    text-align-last: center;
+}
+
+.para-4{
+    direction: rtl;
+}
+
+.para-5{
+    text-decoration: overline underline line-through pink dashed 4px;
+}
+
+.para-6{
+    text-decoration-line: underline;
+    text-decoration-color: blue;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 3px;
+}

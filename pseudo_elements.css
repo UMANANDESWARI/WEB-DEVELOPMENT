@@ -1,0 +1,82 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.demo{
+    width: 230px;
+    height: 80px;
+    color: white;
+    font-size: 50px;
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.demo::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(144, 238, 144, 0.377);
+    z-index: -1;
+    transform: translateX(-300px);
+    transition: transform 0.8s linear;
+}
+.demo:hover::before{
+    transform: translateX(300px);
+}
+
+
+/*  Black Button With Circle
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.demo{
+    width: 230px;
+    height: 80px;
+    color: white;
+    font-size: 50px;
+    background-color: black;
+    border: 2px solid black;
+    box-shadow: 0px 0px 10px 5px grey;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.7s linear;
+}
+.demo::before{
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: grey;
+    border: 2px solid black;
+    opacity: 0.5;
+    z-index: -1;
+    transform: translate(113px, 35px );
+    transition: transform 0.8s linear;
+}
+.demo:hover{
+    transform: translate(-10px, -10px);
+}
+.demo:hover::before{
+    width: 89%;
+    height: 100%;
+    border-radius: 10px;
+    transform: translate(-0px, -10px);
+}
+
+ */

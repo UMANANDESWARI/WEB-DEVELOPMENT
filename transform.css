@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.demo{
+    width: 100px;
+    height: 100px;
+    background-color: darkblue;
+
+    /* translate */
+    /* transform: translatex(100px); */
+    /* transform: translatex(-100px); */
+    /* transform: translatey(100px); */
+    /* transform: translatey(-50px); */
+    /* transform: translate(100px, -50px); */
+
+    /* skewness */
+    /* transform: skewX(20deg); */
+    /* transform: skewX(-20deg); */
+    /* transform: skewy(20deg); */
+    /* transform: skewy(-20deg); */
+    /* transform: skew(20deg, -50deg); */
+
+    /* scaleness */
+    /* transform: scale(20,10); */
+    /* transform: scalex(2); */
+    /* transform: scaley(12); */
+
+    /* rotation */
+    /* transform: rotatex(88deg); */
+    /* transform: rotatey(88deg); */
+    /* transform: rotateZ(88deg); */
+    
+    /* shorthand method for translate, skew, and scale */
+    /* transform: matrix(2, -50deg, 20deg, 3, 100px, 50px);
+        1.scale-x
+        2.skew-y
+        3.skew-x
+        4.scale-y
+        5.translate-x
+        6.translate-y
+     */
+}

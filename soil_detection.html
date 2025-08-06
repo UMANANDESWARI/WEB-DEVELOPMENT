@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Soil Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f0fff4, #e0f7fa);
+      color: #333;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: slideDown 1s ease;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo img {
+      height: 50px;
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #dcedc8;
+    }
+    #clock {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+    }
+    .hero img {
+      max-width: 450px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      color: #2e7d32;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      margin-bottom: 1rem;
+    }
+    .hero button {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .hero button:hover {
+      background-color: #2e7d32;
+    }
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+    .upload-panel input {
+      margin-top: 0.5rem;
+    }
+    .upload-panel button {
+      margin-top: 1rem;
+      background-color: #1976d2;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .report-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      width: 220px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .suggestions div {
+      background: #ffffff;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .suggestions div:hover {
+      transform: scale(1.05);
+    }
+    .weather-tips {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background-color: #e0f2f1;
+      padding: 2rem 1rem;
+    }
+    .weather-tips > div {
+      flex: 1;
+      min-width: 250px;
+      padding: 1rem;
+    }
+    .tips {
+      background: #fefefe;
+      padding: 2rem;
+      margin-top: 1rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 2s ease;
+    }
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      max-width: 800px;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .carousel img {
+      width: 100%;
+      animation: slide 10s infinite;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+    .footer {
+      background-color: #388e3c;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .weather-tips {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://img.icons8.com/color/96/plant-under-sun.png" alt="Logo" />
+      <h1>SoilSense AI</h1>
+    </div>
+    <div id="clock">--:--:--</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>AI-Based Soil Detection System</h2>
+      <p>Upload your soil image or data to get real-time composition, pH level, and crop suggestions with AI insights.</p>
+      <button>Get Started</button>
+    </div>
+    <img src="https://cdn.pixabay.com/photo/2016/07/19/08/42/planting-1527866_960_720.jpg" alt="Soil Analysis">
+  </section>
+
+  <section class="upload-panel">
+    <h2>📤 Upload Soil Image</h2>
+    <p>Select an image file (JPG, PNG, WebP):</p>
+    <input type="file" accept="image/*">
+    <br>
+    <button>Analyze</button>
+  </section>
+
+  <section class="report-cards">
+    <div class="card">
+      <h3>🧪 Composition</h3>
+      <p>Organic: 4.2%, Sand: 42%, Clay: 22%</p>
+    </div>
+    <div class="card">
+      <h3>⚙️ pH & Moisture</h3>
+      <p>pH: 6.4 (Neutral)<br>Moisture: 18% (Low)</p>
+    </div>
+    <div class="card">
+      <h3>🌿 Nutrients</h3>
+      <p>N: Low, P: Optimal, K: High</p>
+    </div>
+  </section>
+
+  <section class="crop-suggestion">
+    <h2>🌱 Recommended Crops</h2>
+    <div class="suggestions">
+      <div>🌾 Rice</div>
+      <div>🌽 Corn</div>
+      <div>🥔 Potato</div>
+      <div>🧄 Garlic</div>
+    </div>
+  </section>
+
+  <section class="weather-tips">
+    <div class="weather">
+      <h2>🌤️ Current Weather</h2>
+      <p>Peddapuram, 32°C, Humidity: 70%, Wind: 9 km/h</p>
+    </div>
+    <div class="irrigation">
+      <h2>💧 Irrigation Tip</h2>
+      <p>Next Watering: Tuesday 8 AM<br>Recommended every 3 days</p>
+    </div>
+  </section>
+
+  <section class="tips">
+    <h2>🌿 Soil Health Tips</h2>
+    <ul style="text-align: left; padding: 1rem;">
+      <li>Rotate crops regularly to avoid nutrient depletion.</li>
+      <li>Test your soil at least once a season for better insights.</li>
+      <li>Use organic compost to improve soil structure.</li>
+      <li>Avoid excessive irrigation to maintain aeration.</li>
+    </ul>
+  </section>
+
+  <section class="carousel">
+    <img src="https://cdn.pixabay.com/photo/2018/06/08/00/41/agriculture-3469860_1280.jpg" alt="Expert Advice">
+    <img src="https://cdn.pixabay.com/photo/2016/11/23/14/45/agriculture-1851202_1280.jpg" alt="Experts">
+    <img src="https://cdn.pixabay.com/photo/2017/06/07/08/22/field-2389901_1280.jpg" alt="Guidance">
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 SoilSense AI | All Rights Reserved</p>
+    <p>
+      <a href="#">Home</a> |
+      <a href="#">Privacy</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Support</a>
+    </p>
+  </footer>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById('clock').textContent = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart MULBERRY Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f3e8ff;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2rem;
+      animation: myani 1s ease;
+    }
+
+    .hero img {
+        height: 350px;
+      max-width: 450px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #6a1b9a;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      margin-bottom: 1rem;
+      font-size: 20px;
+    }
+
+    .hero button {
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.8s;
+    }
+
+    .hero button:hover {
+      background-color: #bf8cdf;
+    }
+
+    @keyframes myani{
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .content-box {
+        border: 3px solid #6a1b9a;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+      animation: ani 1.2s ease-out;
+    }
+
+     @keyframes ani {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .content-box1 {
+      width: 900px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+      animation: ani 1.2s ease-out;
+      margin: 2rem auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      animation: anima 1.5s ease;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #691b9ae5;
+      color: white;
+      font-weight: 600;
+    }
+
+    @keyframes anima {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .soil-classification{
+        border: 3px solid #6a1b9a;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+    }
+
+
+    .upload-panel{
+        border: 3px solid #6a1b9a;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+    }
+
+    .upload-panel input {
+      margin-top: 0.5rem;
+    }
+
+    .upload-panel button {
+      margin-top: 1rem;
+      background-color: #8f2fcb;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 8px solid;
+    }
+
+    .texture, .chemical, .nutrients { 
+      border-color: #6a1b9a; 
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+     .item {
+      margin: 5px 0;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+    .low { color: #e53935; }
+    .optimal { color: #43a047; }
+    .high { color: #fb8c00; }
+    .neutral { color: #1e88e5; }
+    
+
+    .section {
+      animation: fadeInUp 2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section:hover {
+          transform: scale(1.02);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      }
+
+
+
+
+        .crop-suggestion-grid {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f3e3fbc0;
+            border-top: 2px solid #6a1b9a;
+        }
+
+        .crop-suggestion-grid h2 {
+          font-size: 1.8rem;
+          color: #6a1b9a;
+        }
+
+        .crop-subtitle {
+          color: #2b2828;
+          margin-top: 0.5rem;
+          font-size: 0.95rem;
+        }
+
+        .grid-suggestions {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 1.5rem;
+          margin-top: 2rem;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .crop-card {
+          background: linear-gradient(145deg, #ffffff, #b891cfb3);
+          padding: 1rem;
+          border-radius: 14px;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+          font-size: 1rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .crop-card p {
+          margin-top: 0.4rem;
+          font-size: 0.85rem;
+          color: #444;
+        }
+
+        .crop-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+        }
+
+
+        .weather-tips {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #efddf9a6;
+            padding: 2rem 1rem;
+            border-top: 1px solid #6a1b9a;
+            margin-top: 50px;
+        }
+
+
+      .salinity-ec{
+        border: 3px solid #6a1b9a;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+    .salinity-ec p{
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .fertilizer-recommend{
+        border: 3px solid #6a1b9a;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+
+    .soil-health-index{
+        border: 3px solid #6a1b9a;
+        background: #ffffff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        animation: myani 2s ease;
+        transition: transform 0.5s;
+    }
+
+    .tips:hover, .salinity-ec:hover, .fertilizer-recommend:hover, .soil-health-index:hover{
+        box-shadow: 0px 0px 15px 5px #d9bce8;
+        transform: scale(1.03);
+    } 
+
+
+     .tips {
+        border: 3px solid #6a1b9a;
+      background: #fefefe;
+      padding: 2rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: myani 2s ease;
+      transition: transform 0.5s;
+    }
+
+     .soil-cards {
+      background: #efddf9a6;
+      padding: 60px 20px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 50px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #6a1b9a;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px 20px;
+      width: 400px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.8s ease, box-shadow 0.3s ease;
+      animation: tata 1s ease-in-out;
+    }
+
+    .card h3 {
+      color: #6a1b9a;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+
+   @keyframes tata {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .video-section iframe {
+      width: 100%;
+      height: 320px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border: none;
+      animation: animation1 1s ease;
+    }
+
+     @keyframes animation1 {
+      from { 
+        opacity: 0; 
+      }
+      to { 
+        opacity: 1; 
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #6a1b9a;
+    }
+
+   
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero img {
+        margin-top: 4rem;
+        max-width: 350px;
+      }
+      .weather-tips {
+        flex-direction: column;
+        text-align: center;
+      }
+      .video-section iframe { 
+        height: 200px; 
+      }
+      .irrigation{
+        margin-top: 50px;
+      }
+      
+    }
+
+    
+    @media (min-width: 768px){
+      .hero img {
+        margin-top: 4rem;
+        max-width: 450px;
+      }
+      .content-box1{
+        width: 700px;
+      }
+      .irrigation{
+        margin-top: 50px;
+      }
+       .video-section iframe { 
+        height: 300px; 
+      }
+    }
+     @media (min-width: 1024px){
+      .irrigation{
+        margin-top: 0px;
+      }
+    }
+
+
+   @media (max-width: 425px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem !important;
+  }
+
+  .hero img {
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .content-box, .content-box1,
+  .soil-classification, .upload-panel,
+  .salinity-ec, .fertilizer-recommend,
+  .tips, .soil-health-index {
+    width: 95% !important;
+    margin: 1rem auto;
+    padding: 1.2rem;
+  }
+
+  .hehe, .hehe1, 
+  .salinity-ec, .fertilizer-recommend,
+  .tips, .soil-health-index {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  table th, table td {
+    padding: 0.3rem;
+    font-size: 0.75rem;
+  }
+
+  .grid-suggestions {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .crop-card {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .crop-card p {
+    font-size: 0.75rem;
+  }
+
+  .weather-tips {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .video-section iframe {
+    height: 200px !important;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+}
+
+
+.hehe .content-box{
+  transition: transform 0.5s ease;
+}
+.hehe .content-box:hover{
+  box-shadow: 0 20px 15px #bf8cdf71;
+  transform: translateY(-10px);
+}
+
+tr:hover{
+  box-shadow: 0px 0px 5px 2px #bf8cdf;
+}
+
+  </style>
+</head>
+<body>
+
+
+    <section class="hero">
+        <div class="hero-text">
+        <h2 style="font-size: 40px;">AI-Based Mulberry Crop Monitoring</h2>
+        <p style="font-size: 16px;">Upload leaf or field data to analyze mulberry health, nutrient levels, and receive AI-powered suggestions for optimal silkworm feeding and yield.</p>
+        <button onclick="scrolltosection()">Get Started</button>
+        </div>
+        <img src="https://t3.ftcdn.net/jpg/00/23/45/72/360_F_23457258_R1vbtd54aViS8uIpl8hj0jb6qUeJxmkE.jpg" alt="Soil Analysis">
+    </section>
+
+
+<section class="hehe" style="display: flex; gap:50px; justify-content:space-evenly; flex-wrap:wrap;">
+    <section class="content-box" style="width: 600px; line-height: 28px;">
+        <h2>🧵 Why Mulberry Crop Monitoring Matters</h2>
+        <p style="margin-top: 20px;">
+            Mulberry leaf quality directly impacts silkworm health, silk yield, and cocoon quality. Monitoring factors like leaf moisture, nutrient content, and pest presence helps sericulture farmers ensure consistent, high-quality leaf production. Early detection leads to better silkworm rearing, reduced crop loss, and increased profitability in sustainable silk farming.
+        </p>
+    </section>
+
+    <section class="content-box" style="width: 600px;">
+          <h2>📈 Benefits of AI-Based Mulberry Crop Monitoring</h2>
+        <ul type="square" style="text-align: left; margin: auto; margin-top:20px; line-height: 25px; padding-left: 3rem;">
+            <li>Improves leaf quality for better silkworm feeding</li>
+            <li>Detects early signs of nutrient deficiency or pest attacks</li>
+            <li>Reduces input costs by optimizing fertilizer and irrigation use</li>
+            <li>Increases cocoon yield and silk quality</li>
+            <li>Supports sustainable and profitable sericulture practices</li>
+        </ul>
+    </section>
+</section> 
+
+    <section class="content-box1">
+          <h2>🧾 Ideal Soil Types for Mulberry Cultivation</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Soil Type</th>
+                        <th>Texture</th>
+                        <th>Water Holding</th>
+                        <th>Mulberry Suitability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Loamy</td>
+                        <td>Balanced, fertile</td>
+                        <td>Moderate</td>
+                        <td>✅ Highly Suitable</td>
+                    </tr>
+                    <tr>
+                        <td>Clay Loam</td>
+                        <td>Slightly dense, rich in nutrients</td>
+                        <td>Good</td>
+                        <td>✅ Suitable with proper drainage</td>
+                    </tr>
+                    <tr>
+                        <td>Sandy Loam</td>
+                        <td>Light, well-drained</td>
+                        <td>Low to Moderate</td>
+                        <td>⚠️ Suitable with frequent irrigation</td>
+                    </tr>
+                    <tr>
+                        <td>Saline or Alkaline</td>
+                        <td>Crusty, poor fertility</td>
+                        <td>Poor</td>
+                        <td>❌ Not Suitable</td>
+                    </tr>
+                </tbody>
+            </table>
+
+</section>
+
+
+<section id="targetSec" class="hehe1" style="display: flex; flex-wrap: wrap;">
+    <section class="soil-classification" style="width: 500px;">
+    <h2>🧭 Select Soil Type for Mulberry</h2>
+    <p style="margin-top: 10px;">Choose the current soil type in your plantation:</p>
+    <select style="margin-top: 10px; padding: 0.5rem; border-radius: 6px; border: 1px solid #ccc;">
+        <option>Loamy Soil - ✅ Ideal</option>
+        <option>Clay Loam - ✅ Good with drainage</option>
+        <option>Sandy Loam - ⚠️ Needs irrigation</option>
+        <option>Peaty Soil - ⚠️ Monitor waterlogging</option>
+        <option>Saline/Alkaline - ❌ Not Suitable</option>
+    </select>
+    </section>
+
+    <section class="upload-panel" style="width: 500px;">
+        <h2>📤 Upload Mulberry Soil Image</h2>
+        <p style="margin-top: 10px;">Select a soil image from your farm (JPG, PNG, WebP):</p>
+        <input type="file" accept="image/*" style="margin-top: 10px;">
+        <br>
+        <button onclick="analyzeImage()">Analyze for Mulberry Suitability</button>
+
+    </section>
+</section>
+
+
+  <h1 style="margin-bottom: 10px;">🌿 Mulberry Crop Soil Report - Sericulture Focus</h1>
+
+  <section style="display: flex; gap: 20px; justify-content:space-evenly; flex-wrap: wrap;">
+
+  <div class="section texture">
+    <h2>🧪 Mulberry Soil Texture & Organic Content</h2>
+    <div class="item">Organic Matter: <strong>4.2%</strong> - <span class="optimal">Moderate</span> (Ideal for leaf quality)</div>
+    <div class="item">Sand: <strong>42%</strong></div>
+    <div class="item">Clay: <strong>22%</strong></div>
+    <div class="item">→ Likely Texture: <strong>Sandy Loam</strong> (Good for root growth)</div>
+    </div>
+
+    <div class="section chemical">
+    <h2>⚙️ Soil Chemical & Moisture Properties</h2>
+    <div class="item" style="margin-top: 30px;">Soil pH: <strong>6.4</strong> - <span class="neutral">Neutral</span> (Ideal for mulberry)</div>
+    <div class="item">Moisture Level: <strong>18%</strong> - <span class="low">Low</span> (Consider irrigation)</div>
+    </div>
+
+    <div class="section nutrients">
+    <h2>🌿 Macronutrient Status for Mulberry (NPK)</h2>
+    <div class="item">Nitrogen (N): <span class="low">Low</span> - <em>Boost for leaf protein synthesis</em></div>
+    <div class="item">Phosphorus (P): <span class="optimal">Optimal</span> - <em>Supports root development</em></div>
+    <div class="item">Potassium (K): <span class="high">High</span> - <em>Improves leaf thickness & disease resistance</em></div>
+    </div>
+
+
+  </section>
+
+    <section class="crop-suggestion-grid">
+            <h2>🌿 Recommended Practices for Mulberry Cultivation</h2>
+            <p class="crop-subtitle">Based on your soil's pH, moisture & nutrient levels</p>
+            <div class="grid-suggestions">
+                <div class="crop-card">
+                    🌱 <strong>Soil Preparation</strong>
+                    <p>Mulberry grows best in well-drained loamy soils with good fertility and pH between 6.2-6.8.</p>
+                </div>
+                <div class="crop-card">
+                    💧 <strong>Moisture Management</strong>
+                    <p>Maintain consistent soil moisture, especially during leaf production; avoid water stagnation.</p>
+                </div>
+                <div class="crop-card">
+                    🧪 <strong>Fertilizer Use</strong>
+                    <p>Apply nitrogen-rich fertilizers for better leaf yield; use FYM and compost to enhance organic content.</p>
+                </div>
+                <div class="crop-card">
+                    🌤️ <strong>Sunlight & Spacing</strong>
+                    <p>Ensure 6-7 hours of sunlight daily and maintain proper spacing (3ft x 3ft) for healthy growth.</p>
+                </div>
+            </div>
+
+</section>
+
+    <section class="weather-tips">
+            <div class="weather">
+            <h2>🌤️ Current Weather</h2>
+            <p style="margin-top: 10px;">Peddapuram, 32°C, Humidity: 70%, Wind: 9 km/h</p>
+            </div>
+            <div class="irrigation">
+            <h2>💧 Mulberry Irrigation Tip</h2>
+            <p style="margin-top: 10px; line-height: 28px; font-size: 15px;">
+                Next Irrigation: Tuesday 8 AM<br>
+                💡 Young plants: Water every 2-3 days<br>
+                🌿 Mature plants: Every 5-7 days depending on rainfall<br>
+                🚫 Avoid overwatering—mulberry roots are sensitive to waterlogging
+            </p>
+            </div>
+    </section>
+
+
+<section style="display: flex; flex-wrap:wrap;">
+    <section class="salinity-ec" style="width: 600px; margin-top: 60px; margin-bottom: 70px;">
+    <h2>🌡️ Soil Salinity & EC Reading for Mulberry</h2>
+    <p>Electrical Conductivity: <strong>1.2 dS/m</strong> - <span style="color: orange;">Moderate</span></p>
+    <p>Impact on Mulberry: <strong>Safe</strong> - No immediate risk</p>
+    <p>Tip: Flush soil with clean water if EC > 2.0 dS/m to prevent leaf quality decline</p>
+    </section>
+
+    <section class="fertilizer-recommend" style="width: 600px;">
+    <h2>💊 Fertilizer Suggestions for Mulberry</h2>
+    <p style="margin-top: 10px;">Based on NPK analysis for leaf yield optimization:</p>
+    <ul type="square" style="text-align: left; max-width: 600px; margin: auto; line-height: 35px; margin-top: 15px; padding-left: 1rem; font-size: 14px;">
+        <li><strong>Nitrogen (Low)</strong>: Apply Urea or Ammonium Sulphate to boost leaf growth</li>
+        <li><strong>Phosphorus (Optimal)</strong>: Maintain current levels, no action needed</li>
+        <li><strong>Potassium (High)</strong>: Avoid MOP; monitor for leaf burn or curling</li>
+    </ul>
+    </section>
+</section>
+
+
+<section style="display: flex; flex-wrap:wrap;">
+    <section class="tips" style="width: 600px;">
+        <h2>🌿 Soil Health Tips for Mulberry Cultivation</h2> 
+        <ul type="square" style="text-align: left; padding-left: 2.5rem; line-height: 32px; margin-top: 15px; font-size: 14px;">
+        <li>Apply farmyard manure (FYM) and vermicompost to boost organic content.</li>
+        <li>Rotate mulberry plots with legumes to restore soil nitrogen.</li>
+        <li>Ensure good drainage to avoid root rot in humid conditions.</li>
+        <li>Use mulching to conserve moisture and suppress weeds.</li>
+        </ul>
+    </section>
+
+    <section class="soil-health-index" style="width: 600px;">
+    <h2>🧭 Mulberry Soil Health Index</h2>
+    <div style="margin: auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: #691b9a7d; margin-top: 10px;">
+        76 / 100
+    </div>
+    <p style="color: #6a1b9a; font-weight: bold; margin-top: 10px;">Healthy - Suitable for Mulberry Growth</p>
+
+    </section>
+</section>
+
+    <section class="soil-cards">
+        <h2 class="section-title">🔍 Mulberry Crop Monitoring Highlights</h2>
+        <div class="card-container">
+
+        <div class="card">
+            <h3>🧪 Why Monitor Mulberry Soil?</h3>
+            <p>Healthy mulberry plants are essential for quality silkworm rearing. Soil quality directly impacts leaf yield and nutrition.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 What Do We Analyze?</h3>
+            <p>We monitor pH, moisture, EC, nitrogen, organic matter, and micronutrients to ensure optimal conditions for mulberry growth.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌿 How Can You Improve?</h3>
+            <p>Apply FYM or vermicompost, avoid water stagnation, prune regularly, and use mulberry-specific fertilizers for better leaf quality.</p>
+        </div>
+
+        </div>
+
+    </section>
+
+    <section class="content-box1 video-section" style="margin-top: 50px;">
+        <h2 style="color:#6a1b9a">📹 Watch: Mulberry Cultivation & Soil Management for Sericulture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WUxjrDe7uTI?si=FRIgUxVM2EI1HVnR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>
+
+
+
+<!-- script -->
+ <script>
+  function analyzeImage() {
+    alert("🧵 Analyzing mulberry field soil image for sericulture... Please wait!");
+  }
+  function scrolltosection()
+    {
+        const section = document.getElementById("targetSec");
+        section.scrollIntoView({ behavior: "smooth" });
+    }
+</script>    
+
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Agricultural Advisory</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+   
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+      min-height: 100vh;
+    }
+
+    .contact-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(45, 80, 22, 0.15);
+      overflow: hidden;
+    }
+
+    .contact-title {
+      background: linear-gradient(135deg, #2d5016 0%, #3a6b1c 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 30px;
+      background: #fafcfa;
+    }
+
+    /* Left side contact info */
+    .contact-info {
+      flex: 1 1 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .info-box {
+      background: white;
+      border-left: 5px solid #2d5016;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(45, 80, 22, 0.08);
+    }
+
+    .info-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(45, 80, 22, 0.15);
+    }
+
+    .info-box h3 {
+      color: #2d5016;
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .info-box p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4a5c3a;
+    }
+
+    .info-box i{
+        margin-right: 10px;
+        color: #2d5016;
+        font-size: 18px;
+    }
+
+    .sector-tags {
+      background: #f0f8f0;
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px dashed #2d5016;
+    }
+
+    .sector-tags h3 {
+      color: #2d5016;
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .sector-tag {
+      background: #2d5016;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Right side form */
+    .contact-form {
+      flex: 1 1 500px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(45, 80, 22, 0.1);
+    }
+
+    .contact-form h2 {
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: #2d5016;
+      text-align: center;
+      position: relative;
+    }
+
+
+    form .form-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      flex: 1;
+      padding: 12px 16px;
+      font-size: 14px;
+      border: 2px solid #e0e8e0;
+      border-radius: 10px;
+      font-family: inherit;
+    }
+
+    form input:focus,
+    form textarea:focus,
+    form select:focus {
+      outline: none;
+      border-color: #2d5016;
+      box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+    }
+
+    form textarea {
+      width: 100%;
+      resize: vertical;
+      margin-bottom: 15px;
+      min-height: 100px;
+    }
+
+    form select {
+      background: white;
+      cursor: pointer;
+    }
+
+    .captcha {
+      background: #f0f8f0;
+      border: 2px dashed #2d5016;
+      padding: 12px;
+      width: 140px;
+      margin: 15px 0;
+      font-family: monospace;
+      font-size: 18px;
+      font-weight: bold;
+      color: #2d5016;
+      letter-spacing: 5px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #2d5016 0%, #3a6b1c 100%);
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #234012 0%, #2d5016 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(45, 80, 22, 0.3);
+    }
+
+    button i{
+        margin-left: 10px;
+        color: white;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column;
+      }
+      
+      .contact-wrapper {
+        padding: 20px;
+        gap: 20px;
+      }
+      
+      .contact-title {
+        font-size: 22px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    
+
+    <section class="contact-section">
+        <div class="contact-title">🌱 Get Agricultural Guidance & Support 🌱</div>
+
+        <div class="contact-wrapper">
+            <!-- Left Side Info Boxes -->
+            <div class="contact-info">
+                <div class="info-box">
+                    <h3><i class="fas fa-phone-alt"></i>Advisory Helpline</h3>
+                    <p>+91 80004 36640<br><small>Available 24/7 for emergencies</small></p>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-envelope"></i>Email Support</h3>
+                    <p>support@agriadvice.com<br>expert@agriadvice.com</p>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-map-marker-alt"></i>Regional Office</h3>
+                    <p>Agricultural Research Center,<br>Sector 15, Knowledge Park,<br>Hyderabad, Telangana – 500032</p>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-clock"></i>Consultation Hours</h3>
+                    <p>Monday to Saturday<br>06:00 AM to 08:00 PM<br><small>Sunday: Emergency only</small></p>
+                </div>
+                
+                <div class="sector-tags">
+                    <h3><i class="fas fa-seedling"></i>Our Expertise</h3>
+                    <div class="tags-container">
+                        <span class="sector-tag">🌾 Agriculture</span>
+                        <span class="sector-tag">🌊 Aquaculture</span>
+                        <span class="sector-tag">🐛 Sericulture</span>
+                        <span class="sector-tag">🌿 Organic Farming</span>
+                        <span class="sector-tag">🐝 Apiculture</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Form -->
+            <div class="contact-form">
+                <h2>Request Agricultural Advisory</h2>
+                <form>
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name *" required />
+                        <input type="text" placeholder="Last Name" />
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Mobile Number *" required />
+                        <input type="email" placeholder="Email ID *" required />
+                    </div>
+                    <div class="form-row">
+                        <select required>
+                            <option value="">Select Your Sector *</option>
+                            <option value="agriculture">🌾 Agriculture</option>
+                            <option value="aquaculture">🌊 Aquaculture</option>
+                            <option value="sericulture">🐛 Sericulture</option>
+                            <option value="organic">🌿 Organic Farming</option>
+                            <option value="apiculture">🐝 Apiculture</option>
+                        </select>
+                        <input type="text" placeholder="Farm Size (in acres)" />
+                    </div>
+                    <textarea placeholder="Describe your agricultural query or issue *" rows="4" required></textarea>
+                    <input type="text" placeholder="Please type the characters *" required />
+                    <div class="captcha">AGR15</div>
+                    <button type="submit">Submit Request<i class="fas fa-leaf"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+
+</body>
+</html>

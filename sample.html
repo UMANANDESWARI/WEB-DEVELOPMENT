@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeating Text</title>
+    <style>
+        .repeating-text-container {
+            width: 100%; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
+            background-image: linear-gradient(to right, #a09494, #c9c2c2); /* Choose your background color */
+            background-repeat: repeat;
+            background-size: 100px 100px; /* Adjust size as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .repeating-text {
+            font-size: 4em; /* Adjust font size as needed */
+            font-weight: bold;
+            color: transparent;
+            background-image: linear-gradient(to right, #000, #000); /* Choose your text color */
+            background-repeat: repeat repeat-x repeat-y;
+            background-clip: text;
+            -webkit-background-clip: text;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+    </style>
+</head>
+<body>
+    <div class="repeating-text-container">
+        <span class="repeating-text">FREEPIK</span>
+    </div>
+</body>
+</html>

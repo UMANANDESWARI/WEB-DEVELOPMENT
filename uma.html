@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Soil Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f4fff6;
+      color: #333;
+    }
+
+    header {
+      background: #388e3c;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .hero img {
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero h2 {
+      color: #2e7d32;
+    }
+
+    .hero button {
+      margin-top: 1rem;
+      padding: 10px 20px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .upload-panel input {
+      margin-top: 1rem;
+    }
+
+    .report-cards {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      padding: 1rem;
+      width: 220px;
+    }
+
+    .card img {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .suggestions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .suggestions div {
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .weather-tips {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background-color: #e8f5e9;
+      padding: 2rem 1rem;
+      border-top: 1px solid #cfd8dc;
+    }
+
+    .weather-tips > div {
+      flex: 1;
+      min-width: 250px;
+      padding: 1rem;
+    }
+
+    .feature-section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.06);
+      margin: 1.5rem auto;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    .feature-section img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #2e7d32;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://img.icons8.com/color/96/plant-under-sun.png" alt="Logo" />
+      <h1>SoilSense AI</h1>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Analysis</a>
+      <a href="#">Crop Guide</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Smart Soil Quality Detection</h2>
+      <p>Analyze your soil with AI to get crop recommendations, pH levels, salinity, fertilizer tips and more.</p>
+      <button>Start Analysis</button>
+    </div>
+    <img src="https://cdn.pixabay.com/photo/2016/07/19/08/42/planting-1527866_960_720.jpg" alt="Soil Image">
+  </section>
+
+  <section class="upload-panel">
+    <h2>📷 Upload Soil Image</h2>
+    <input type="file" accept="image/*">
+    <br><br>
+    <button>Scan Image</button>
+  </section>
+
+  <section class="report-cards">
+    <div class="card">
+      <img src="https://img.icons8.com/dusk/64/test-tube.png"/>
+      <h3>Composition</h3>
+      <p>Organic: 4.2%<br>Sand: 42%<br>Clay: 22%</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/48/ph.png"/>
+      <h3>pH & Moisture</h3>
+      <p>pH: 6.4<br>Moisture: 18%</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/48/fertilizer.png"/>
+      <h3>Nutrient Levels</h3>
+      <p>N: Low<br>P: Optimal<br>K: High</p>
+    </div>
+  </section>
+
+  <section class="feature-section">
+    <img src="https://img.icons8.com/color/96/soil.png"/>
+    <h2>Soil Type Detected</h2>
+    <p>Loamy Soil - Great for most crops due to balanced composition.</p>
+  </section>
+
+  <section class="feature-section">
+    <img src="https://img.icons8.com/external-smashingstocks-outline-color-smashing-stocks/68/000000/external-ec-electric-conductivity-smashingstocks-outline-color-smashing-stocks.png"/>
+    <h2>Salinity & EC</h2>
+    <p>EC: 1.2 dS/m (Moderate)<br>Salinity: Acceptable for most crops</p>
+  </section>
+
+  <section class="feature-section">
+    <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/fertilizer.png"/>
+    <h2>Fertilizer Suggestions</h2>
+    <ul style="text-align:left; max-width: 500px; margin: auto;">
+      <li>Apply Urea (46-0-0) for Nitrogen boost.</li>
+      <li>Use Organic Compost to maintain soil structure.</li>
+      <li>Do not use Potash-rich fertilizers for now.</li>
+    </ul>
+  </section>
+
+  <section class="feature-section">
+    <img src="https://img.icons8.com/color/96/combo-chart.png"/>
+    <h2>Soil Health Index</h2>
+    <p style="font-size: 1.5rem; font-weight: bold; color: green;">76 / 100 — Healthy</p>
+  </section>
+
+  <section class="crop-suggestion">
+    <h2>🌱 Recommended Crops</h2>
+    <div class="suggestions">
+      <div><img src="https://img.icons8.com/color/48/rice-bowl.png"/> Rice</div>
+      <div><img src="https://img.icons8.com/color/48/potato.png"/> Potato</div>
+      <div><img src="https://img.icons8.com/color/48/corn.png"/> Corn</div>
+      <div><img src="https://img.icons8.com/color/48/garlic.png"/> Garlic</div>
+    </div>
+  </section>
+
+  <section class="weather-tips">
+    <div>
+      <h3>🌤️ Weather</h3>
+      <p>Location: Peddapuram</p>
+      <p>Temperature: 32°C<br>Humidity: 70%</p>
+    </div>
+    <div>
+      <h3>💧 Irrigation Advice</h3>
+      <p>Next Watering: Tuesday 8 AM</p>
+      <p>Schedule: Every 3 days</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 SoilSense AI — Empowering Smart Farming</p>
+  </footer>
+
+</body>
+</html>

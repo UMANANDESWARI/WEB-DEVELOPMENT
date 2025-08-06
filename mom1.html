@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriAssist - Core Modules</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+        padding: 30px 10px;
+        background-color: #2e7d32;
+        color: white;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 30px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+    }
+
+    .card h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: #2e7d32;
+    }
+
+    .card ul {
+        list-style: none;
+    }
+
+    .card ul li {
+        padding: 6px 0;
+        font-size: 1rem;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .card ul li::before {
+        content: "✔";
+        color: #2e7d32;
+        position: absolute;
+        left: 0;
+    }
+
+    .icon {
+        font-size: 30px;
+        margin-bottom: 10px;
+        display: block;
+        color: #2e7d32;
+    }
+</style>
+<!-- Add Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h1>AgriAssist</h1>
+    <p>Core Modules</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <i class="fas fa-seedling icon"></i>
+        <h2>Farming Type Guidance</h2>
+        <ul>
+            <li>Soil Analysis</li>
+            <li>Crop Suitability Updates</li>
+            <li>Optimal Crop Solutions</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-cloud-sun icon"></i>
+        <h2>Weather Conditions</h2>
+        <ul>
+            <li>Real-Time Updates</li>
+            <li>Market Impact Analysis</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-chart-line icon"></i>
+        <h2>Marketplace Insights</h2>
+        <ul>
+            <li>Market Pricing & Analysis</li>
+            <li>Plant Demand Forecast</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-leaf icon"></i>
+        <h2>Disease Detection</h2>
+        <ul>
+            <li>Market Trends Recommendations</li>
+            <li>Plant System Recommendations</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-microscope icon"></i>
+        <h2>Advanced Disease Detection</h2>
+        <ul>
+            <li>Image Recognition</li>
+            <li>Expert Consultation</li>
+            <li>Plant Disease Identification</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-tractor icon"></i>
+        <h2>Crop & Suggestions</h2>
+        <ul>
+            <li>Personalized Planting</li>
+            <li>Crop Choices</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

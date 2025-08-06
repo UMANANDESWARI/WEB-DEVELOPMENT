@@ -1,0 +1,39 @@
+body{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .parent{
+    transform-style: preserve-3d;
+    perspective: 100px;
+    border: 2px solid rgb(0, 0, 0);
+    height: 300px;
+    perspective-origin: top right;
+    /* height: 500px; */
+    /* width: 500px; */
+}
+.child{
+    width: 200px;
+    height: 200px;
+    background-color: darkblue;
+    color: white;
+    text-align: justify;
+    padding: 10px;
+    /* transform: rotateX(50deg);  */
+    /* transform: rotateY(30deg); */
+    animation-name: myanimation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    /* transform: rotate(20deg); */
+    /* transform-origin: 0px 0px; */
+}
+
+@keyframes myanimation{
+    0%{
+         transform: rotateY(0deg);
+    }
+    100%{
+         transform: rotateY(360deg);
+    }
+}

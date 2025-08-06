@@ -1,0 +1,30 @@
+.parent{
+    width: 100px;
+    border: 2px solid black;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.child1{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+.child2{
+    display: none;
+}
+.submenu{
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    background-color: rgb(118, 126, 214);
+}
+.submenu:hover{
+    background-color: grey;
+    color: white;
+}
+.parent:hover .child2{
+    display: block;
+}

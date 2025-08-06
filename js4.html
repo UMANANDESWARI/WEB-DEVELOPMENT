@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>OBJECT Functions</title>
+    </head>
+    <body>
+        <script>
+            var d;
+            d = {
+                100 : 2,
+                'thub' : 500
+            };
+            console.log(d);
+            console.log(d.thub);
+            console.log(d[100]);
+
+            console.log(Object.keys(d));
+            console.log(Object.values(d));
+            console.log(Object.entries(d));
+
+            Object.entries(d).map(ele => {
+                console.log(ele);
+            });
+            Object.entries(d).map(ele => {
+                console.log("Key :", ele[0], "Value: ", ele[1]);
+            }); 
+
+            var s = {}
+            s['uma'] = 1;
+            s[80] = 20;
+            console.log(s);
+
+            delete s[80];
+            console.log(s);
+        </script>
+    </body>
+</html>

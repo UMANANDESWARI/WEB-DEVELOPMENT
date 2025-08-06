@@ -1,0 +1,7 @@
+div + h1{
+    color: rgb(120, 5, 103);
+}
+
+div + div{
+    color: rgb(120, 5, 103);
+}

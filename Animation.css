@@ -1,0 +1,79 @@
+.demo{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    animation-name: myanimation;
+    animation-duration: 10s;
+    animation-iteration-count: 3;
+    position: relative;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+.demo1{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    animation-name: myanimation;
+    animation-duration: 10s;
+    animation-iteration-count: 3;
+    position: relative;
+    animation-timing-function: ease-in;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+.demo2{
+    width: 100px;
+    height: 100px;
+    background-color: palevioletred;
+    animation-name: myanimation;
+    animation-duration: 10s;
+    animation-iteration-count: 3;
+    position: relative;
+    animation-timing-function: ease-out;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+}
+.demo3{
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    animation-name: myanimation;
+    animation-duration: 10s;
+    animation-iteration-count: 3;
+    position: relative;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes myanimation{
+    /* from{
+        background-color: aqua;
+        left: 0px;
+        border-radius: 0px;
+    }
+    to{
+        background-color: blueviolet;
+        left: 300px;
+        border-radius: 50%;
+    } */
+
+    0%{
+        /* background-color: aqua; */
+        left: 0px;
+    }
+    20%{
+        /* background-color: rgb(124, 236, 12); */
+        left: 100px;
+    }
+    60%{
+        /* background-color: blueviolet; */
+        left: 300px;
+    }
+    100%{
+        /* background-color: cadetblue; */
+        left: 500px;
+    }
+
+}

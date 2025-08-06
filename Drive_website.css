@@ -1,0 +1,52 @@
+body{
+    font-family: sans-serif;
+    background-color: rgba(239, 234, 234, 0.767);
+}
+.h{
+    width: auto;
+    height: auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 20px 5px #f1f5ff;
+}
+.p{
+    display: flex;
+}
+.p div{
+    margin: 15px;
+}
+.p div:hover{
+    background-color: rgb(255, 170, 0);
+}
+.w{
+    width: auto;
+    height: auto;
+    /* border: 2px solid black; */
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 10px;
+}
+.d1{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+}
+.d2{
+    width: auto;
+    height: auto;
+    padding-top: 50px;
+}
